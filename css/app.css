@@ -3166,6 +3166,7 @@ body.dark .steps__icon path {
 
 .history {
   position: relative;
+  margin-bottom: 8rem;
 }
 
 .history__container {
