@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- Mirrored from ui8-solo-saas.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Nov 2023 00:59:07 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -55,42 +52,56 @@ if (localStorage.getItem('darkMode') === "on") {
 </script>
     <div class="page">
       <header class="header">
-        <div class="header__center center"><a class="header__logo" href="index.html"><img class="header__pic header__pic_dark" src="img/logo-dark.png" alt="" /><img class="header__pic header__pic_light" src="img/logo-light.png" alt="" /></a>
+        <div class="header__center center">
+          <a class="header__logo" href="index.html">
+            <img class="header__pic header__pic_dark" src="img/logo.png" alt="" />
+            <img class="header__pic header__pic_light" src="img/logo.png" alt="" /></a>
           <div class="header__wrapper">
-            <nav class="header__nav"><a class="header__link" href="downloads.html">Downloads</a><a class="header__link" href="pricing.html">Pricing</a><a class="header__link" href="features.html">Features</a><a class="header__link" href="about-us.html">About Us</a><a class="header__link" href="contact.html">Contact</a></nav>
-            <div class="header__btns"><a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a><a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a></div>
+            <nav class="header__nav">
+              <a class="header__link" href="features.html">Features</a>
+              <a class="header__link" href="downloads.html">Academics</a>
+              <a class="header__link" href="pricing.html">Events</a>
+              <a class="header__link" href="about-us.html">About Us</a>
+              <a class="header__link" href="contact.html">Contact</a>
+            </nav>
+            <div class="header__btns">
+              <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a>
+              <a class="header__btn btn sign-up js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a>
+              </div>
             <picture class="header__preview">
               <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="img/header-pic.png" alt="" /></picture>
           </div><button class="header__burger"></button>
         </div>
       </header>
+      <!-- End of header -->
+      
       <div class="main">
         <div class="main__center center">
           <div class="main__wrap">
-            <div class="stage">RISK-FREE 30 DAY TRIAL</div>
-            <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">The best way</span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">to organize </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">your work.</span></h1>
-            <div class="main__text">Organize your tasks, lists and reminders in one app.</div>
-            <div class="main__btns"><button class="main__btn btn btn_orange">Try it free</button><button class="main__btn btn btn_border"><svg class="icon icon-play">
-                  <use xlink:href="img/sprite.svg#icon-play"></use>
-                </svg><span>Watch how it works</span></button></div>
+            <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">Explore the </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">possibilities of </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">interactive learning.</span></h1>
+            <div class="main__text">Your most vital academic resources and tools curated in one place.</div>
+            <div class="main__btns">
+              <button class="main__btn btn btn_orange">Get Started</button>
           </div>
           <div class="main__bg" data-aos>
             <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="img/figures-1.1.png" alt=""></div>
             <div class="main__preview"><img srcset="img/figures-1.2@2x.png 2x" src="img/figures-1.2.png" alt=""></div>
             <div class="main__preview"><img srcset="img/figures-1.3@2x.png 2x" src="img/figures-1.3.png" alt=""></div>
           </div>
-          <div class="main__partners">
-            <div class="main__info">Thousands of teams worldwide are using Solo</div>
+        </div>
+        <div class="main__partners">
+            <div class="main__info">Built for engineering students and anyone with a passion for learning.</div>
             <div class="main__list">
-              <div class="main__logo"><img src="img/rotashow.svg" alt=""></div>
-              <div class="main__logo"><img src="img/waves.svg" alt=""></div>
-              <div class="main__logo"><img src="img/rotashow.svg" alt=""></div>
-              <div class="main__logo"><img src="img/travelers.svg" alt=""></div>
-              <div class="main__logo"><img src="img/goldlines.svg" alt=""></div>
-              <div class="main__logo"><img src="img/velocity.svg" alt=""></div>
+              <div class="main__logo"><img src="img/UG.png" alt=""></div>
+              <div class="main__logo"><img src="img/Eng.png" alt=""></div>
+              <div class="main__logo"><img src="img/Eng.png" alt=""></div>
+              <div class="main__logo"><img src="img/Eng.png" alt=""></div>
+              <div class="main__logo"><img src="img/Eng.png" alt=""></div>
             </div>
           </div>
-        </div>
+      </div>
+
+
       </div>
       <div class="quality">
         <div class="quality__center center">
@@ -104,8 +115,11 @@ if (localStorage.getItem('darkMode') === "on") {
               <div class="quality__preview"><img srcset="img/figures-2.5@2x.png 2x" src="img/figures-2.5.png" alt=""></div>
             </div>
             <div class="quality__wrap">
-              <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Keeping it all together</h2>
-              <div class="quality__text">Just invite your team, Solo does all the heavy-lifting.</div><button class="quality__btn btn btn_border">Schedule a demo</button>
+              <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Chat</h2>
+              <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Create</h2>
+              <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Collaborate</h2>
+              <h2 class="quality__title h2" data-aos="animation-scale-top" data-aos-duration="600">Challenge</h2>
+              <div class="quality__text">We make it all too easy.</div>
             </div>
           </div>
           <div class="quality__bottom">
@@ -545,6 +559,4 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/lib/aos.js"></script>
     <script src="js/app.js"></script>
   </body>
-
-<!-- Mirrored from ui8-solo-saas.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Nov 2023 00:59:32 GMT -->
 </html>

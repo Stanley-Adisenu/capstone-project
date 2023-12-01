@@ -2679,8 +2679,13 @@ body.dark .header__burger:before, body.dark .header__burger:after {
 }
 
 .main__info {
+  margin-top: 3rem;
   margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-size: 1.6rem;
   color: #6E757C;
 }
 
@@ -2688,6 +2693,8 @@ body.dark .header__burger:before, body.dark .header__burger:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 -16px;
 }
 
@@ -2699,7 +2706,8 @@ body.dark .header__burger:before, body.dark .header__burger:after {
 }
 
 .main__logo img {
-  max-width: 100%;
+  max-width: 40%;
+ 
 }
 
 .main:not(:last-child) {
@@ -7841,4 +7849,17 @@ body.dark .field__input, body.dark .field__textarea {
   }
 }
 
+
+.sign-up{
+  background-color: white;
+ border: 4px solid rgba(92, 11, 197, 0.822);
+ border-radius: 0.4rem 1.4rem 0.4rem 0.4rem;
+ transition: 0.4s ease-in-out;
+}
+.sign-up:hover{
+  transform: translateY(-0.25rem);
+  background-color: white;
+  border: 4px solid rgb(255, 186, 255);
+  box-shadow: -0.4em 0.3rem 5rem 1rem rgb(248, 79, 248);
+}
 /*# sourceMappingURL=app.css.map */
