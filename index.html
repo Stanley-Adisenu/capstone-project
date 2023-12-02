@@ -64,9 +64,9 @@ if (localStorage.getItem('darkMode') === "on") {
               <a class="header__link" href="about-us.html">About Us</a>
               <a class="header__link" href="contact.html">Contact</a>
             </nav>
-            <div class="header__btns">
+            <div id="sign-in-out" class="header__btns">
               <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a>
-              <a class="header__btn btn sign-up js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a>
+              <a class="header__btn btn btn_signup js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a>
               </div>
             <picture class="header__preview">
               <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="img/header-pic.png" alt="" /></picture>
@@ -81,7 +81,7 @@ if (localStorage.getItem('darkMode') === "on") {
             <h1 class="main__title d1"><span data-aos="animation-scale-top" data-aos-duration="600">Explore the </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="200">possibilities of </span><span data-aos="animation-scale-top" data-aos-duration="600" data-aos-delay="400">interactive learning.</span></h1>
             <div class="main__text">Your most vital academic resources and tools curated in one place.</div>
             <div class="main__btns">
-              <button class="main__btn btn btn_orange">Get Started</button>
+              <a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Get Started</a>
           </div>
           <div class="main__bg" data-aos>
             <div class="main__preview"><img srcset="img/figures-1.1@2x.png 2x" src="img/figures-1.1.png" alt=""></div>
@@ -340,8 +340,8 @@ if (localStorage.getItem('darkMode') === "on") {
           <div class="invite__container">
             <div class="invite__bg"></div>
             <div class="invite__wrap">
-              <h2 class="invite__title d1" data-aos="animation-scale-top" data-aos-duration="600">Get started with Solo today</h2>
-              <div class="invite__text">Just invite your team, Solo does all the heavy-lifting.</div><button class="invite__btn btn btn_orange">Try it free</button>
+              <h2 class="invite__title d1" data-aos="animation-scale-top" data-aos-duration="600">Join the academic ecosystem.</h2>
+              <div class="invite__text">Empower Your Mind, Explore, Learn, and connect.</div><a href="#sign-in-out"> <button class="invite__btn btn btn_orange">Let’s get started</button></a>
             </div>
             <div class="invite__gallery">
               <div class="invite__preview"><img srcset="img/figures-7.1@2x.png 2x" src="img/figures-7.1.png" alt=""></div>

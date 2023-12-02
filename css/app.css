@@ -2364,10 +2364,13 @@ img {
 .btn_orange {
   background: #FF6E30;
   color: #ffffff;
+transition: 0.3s ease-in-out;
 }
 
 .btn_orange:hover {
-  background: #fc4b00;
+  background: #f1e1da;
+  color:#FF6E30 ;
+  transform: translateY(-0.4rem);
 }
 
 .btn_transparent {
@@ -7851,16 +7854,19 @@ body.dark .field__input, body.dark .field__textarea {
 }
 
 
-.sign-up{
-  background-color: white;
- border: 4px solid rgba(92, 11, 197, 0.822);
- border-radius: 0.4rem 1.4rem 0.4rem 0.4rem;
- transition: 0.4s ease-in-out;
+.btn_signup {
+  background: #FF6E30;
+  color: #ffffff;
+  border: 4px solid #FF6E30;
+
+  /* box-shadow: -0.1rem -0.1rem 10rem 1rem orange; */
+
 }
-.sign-up:hover{
-  transform: translateY(-0.25rem);
-  background-color: white;
-  border: 4px solid rgb(255, 186, 255);
-  box-shadow: -0.4em 0.3rem 5rem 1rem rgb(248, 79, 248);
+
+.btn_signup:hover {
+  background: #f1e1da;
+  color:#FF6E30 ;
+  border: 4px solid #FF6E30;
+  box-shadow: -0.1rem -0.1rem 10rem 1rem orange;
 }
 /*# sourceMappingURL=app.css.map */
