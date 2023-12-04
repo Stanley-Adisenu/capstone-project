@@ -3406,8 +3406,9 @@ body.dark .sorting__action:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 56px;
-  padding: 0 46px 0 21px;
+  height: 60px;
+  margin-left: -1.4rem;
+  padding: 0 69px 0 21px;
   border: 2px solid transparent;
   background: rgba(228, 228, 228, 0.3);
   border-radius: 16px;
@@ -3428,7 +3429,7 @@ body.dark .sorting__action:hover {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 14px;
+  width: 10px;
   height: 8px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8'%3E%3Cpath fill='%231b1d21' d='M.293.293A1 1 0 0 1 1.613.21l.094.083L7 5.585 12.293.293a1 1 0 0 1 1.32-.083l.094.083a1 1 0 0 1 .083 1.32l-.083.094-6 6a1 1 0 0 1-1.32.083l-.094-.083-6-6a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E") no-repeat 50% 50%/100% auto;
   -webkit-transition: -webkit-transform .25s;
@@ -3440,11 +3441,11 @@ body.dark .sorting__action:hover {
 
 .dropdown__body {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 3px);
   left: 0;
   z-index: 20;
-  width: 310px;
-  padding: 32px;
+  width: 200px;
+  padding: 0 30px 30px 30px;
   border: 1px solid #E4E4E4;
   background: #ffffff;
   border-radius: 24px;
@@ -3463,6 +3464,7 @@ body.dark .sorting__action:hover {
 
 .dropdown__item:not(:last-child) {
   margin-bottom: 24px;
+  margin-top:0rem;
 }
 
 .dropdown__title {

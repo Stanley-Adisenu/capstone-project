@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   
-<!-- Mirrored from ui8-unity.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Dec 2023 01:51:54 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="utf-8">
     <title>Overview</title>
@@ -60,89 +59,71 @@ if (localStorage.getItem('darkMode') === "on") {
           <div class="sidebar__inner"><a class="sidebar__logo" href="index.html"><img class="sidebar__pic" src="img/logo-sm.png" alt="" /></a>
             <div class="sidebar__list">
               <div class="sidebar__group">
-                <div class="sidebar__caption caption-sm">Admin<span> tools</span></div>
-                <div class="sidebar__menu"><a class="sidebar__item active" href="index.html">
-                    <div class="sidebar__icon"><svg class="icon icon-overview">
-                        <use xlink:href="img/sprite.svg#icon-overview"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Overview</div>
-                  </a><a class="sidebar__item" href="products.html">
-                    <div class="sidebar__icon"><svg class="icon icon-bag">
-                        <use xlink:href="img/sprite.svg#icon-bag"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Products</div>
-                  </a><a class="sidebar__item" href="campaigns.html">
+                <div class="sidebar__menu">
+
+                  <a class="sidebar__item active" href="index.html">
+                    <div class="sidebar__icon">
+                      <img  class="icon icon-overview" src="./img/android.svg" alt="">
+                      </div>
+                    <div class="sidebar__text">AI assitant</div>
+                  </a>
+
+                  <a class="sidebar__item" href="schedules.html">
+                  <div class="sidebar__icon">
+                    <img class="icon icon-discovery" src="./img/comment-add.svg" alt="">
+                   </div>
+                  <div class="sidebar__text">Community</div>
+                  </a>
+
+                  
+                  <a class="sidebar__item" href="campaigns.html">
                     <div class="sidebar__icon"><svg class="icon icon-chart">
-                        <use xlink:href="img/sprite.svg#icon-chart"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Campaigns</div>
-                  </a><a class="sidebar__item" href="schedules.html">
-                    <div class="sidebar__icon"><svg class="icon icon-discovery">
-                        <use xlink:href="img/sprite.svg#icon-discovery"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Schedules</div>
-                  </a><a class="sidebar__item" href="payouts.html">
-                    <div class="sidebar__icon"><svg class="icon icon-wallet">
-                        <use xlink:href="img/sprite.svg#icon-wallet"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Payouts</div>
-                  </a><a class="sidebar__item" href="statement.html">
-                    <div class="sidebar__icon"><svg class="icon icon-document">
                         <use xlink:href="img/sprite.svg#icon-document"></use>
                       </svg></div>
-                    <div class="sidebar__text">Statements</div>
-                  </a><a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
-                    <div class="sidebar__icon"><svg class="icon icon-settings">
-                        <use xlink:href="img/sprite.svg#icon-settings"></use>
+                    <div class="sidebar__text">Quiz</div>
+                  </a>
+                  
+                  <a class="sidebar__item" href="products.html">                    
+                    <div class="sidebar__icon"><svg class="icon icon-bag">
+                      <use xlink:href="img/sprite.svg#icon-chart"></use>
+                    </svg></div>
+                  <div class="sidebar__text">Leaderboard</div>                  
+                </a>
+                  
+                  <a class="sidebar__item" href="campaigns.html">
+                    <div class="sidebar__icon"><svg class="icon icon-chart">
+                        <use xlink:href="img/sprite.svg#icon-folder"></use>
                       </svg></div>
-                    <div class="sidebar__text">Settings </div>
-                  </a></div>
+                    <div class="sidebar__text">Resources</div>
+                  </a>
+                  
+                  </div>
               </div>
+
+
               <div class="sidebar__group">
-                <div class="sidebar__caption caption-sm">Insights</div>
-                <div class="sidebar__menu"><a class="sidebar__item" href="inbox.html">
-                    <div class="sidebar__icon"><svg class="icon icon-message">
-                        <use xlink:href="img/sprite.svg#icon-message"></use>
-                      </svg></div>
-                    <div class="sidebar__text">Inbox</div>
-                    <div class="sidebar__counter">18</div>
-                  </a><a class="sidebar__item" href="notifications.html">
+                <div class="sidebar__menu">                 
+                  <a class="sidebar__item" href="notifications.html">
                     <div class="sidebar__icon"><svg class="icon icon-notification">
-                        <use xlink:href="img/sprite.svg#icon-notification"></use>
+                        <use xlink:href="img/sprite.svg#icon-discovery"></use>
                       </svg></div>
-                    <div class="sidebar__text">Notifications</div>
+                    <div class="sidebar__text">Progress</div>
                     <div class="sidebar__counter">2 </div>
-                  </a><a class="sidebar__item" href="comments.html">
-                    <div class="sidebar__icon"><svg class="icon icon-chat">
-                        <use xlink:href="img/sprite.svg#icon-chat"></use>
+                  </a>
+
+                  <a class="sidebar__item js-popup-open" href="#popup-settings" data-effect="mfp-zoom-in">
+                    <div class="sidebar__icon"><svg class="icon icon-settings">
+                        <use xlink:href="img/sprite.svg#icon-profile"></use>
                       </svg></div>
-                    <div class="sidebar__text">Comments</div>
-                    <div class="sidebar__counter">20</div>
-                  </a></div>
+                    <div class="sidebar__text">Profile </div>
+                  </a>                  
+              
+                  
+                 </div>
+
               </div>
             </div>
-            <div class="sidebar__profile">
-              <div class="sidebar__details"><a class="sidebar__link" href="#">
-                  <div class="sidebar__icon"><svg class="icon icon-profile">
-                      <use xlink:href="img/sprite.svg#icon-profile"></use>
-                    </svg></div>
-                  <div class="sidebar__text">Profile</div>
-                </a><a class="sidebar__link" href="#">
-                  <div class="sidebar__icon"><svg class="icon icon-logout">
-                      <use xlink:href="img/sprite.svg#icon-logout"></use>
-                    </svg></div>
-                  <div class="sidebar__text">Log out</div>
-                </a></div><a class="sidebar__user" href="#">
-                <div class="sidebar__ava"><img class="sidebar__pic" src="img/ava.png" alt="" /></div>
-                <div class="sidebar__desc">
-                  <div class="sidebar__man">Tam Tran</div>
-                  <div class="sidebar__status caption">Free account</div>
-                </div>
-                <div class="sidebar__arrow"><svg class="icon icon-arrows">
-                    <use xlink:href="img/sprite.svg#icon-arrows"></use>
-                  </svg></div>
-              </a>
-            </div>
+
           </div>
         </div>
         <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-moon">
@@ -426,5 +407,5 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/charts.js"></script>
   </body>
 
-<!-- Mirrored from ui8-unity.herokuapp.com/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Dec 2023 01:52:24 GMT -->
+
 </html>
