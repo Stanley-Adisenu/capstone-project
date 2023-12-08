@@ -9613,3 +9613,19 @@ body.dark .mfp-bg {
 }
 
 /*# sourceMappingURL=app.css.map */
+
+
+.position{
+  border: 8px solid orange;
+  padding-top: 2.5rem;
+  border-radius: 100%;
+  height: 9rem;
+  width: 9rem;
+  margin-left: 2.5rem;
+  box-shadow: -0.2rem -0.2rem 0.8rem 0.3rem rgba(255, 226, 172, 0.5) ;
+}
+
+.events{
+  width: 21rem;
+  height: 7rem;
+}
