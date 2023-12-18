@@ -9610,7 +9610,6 @@ body.dark .mfp-bg {
   }
 }
 
-/*# sourceMappingURL=app.css.map */
 
 
 .position{
@@ -9627,3 +9626,23 @@ body.dark .mfp-bg {
   width: 21rem;
   height: 7rem;
 }
+
+.marginator{
+  margin: 2rem;
+}
+
+<!-- pagination-->
+.pagination {
+  margin-top: 8rem;
+  margin-bottom: 10rem;
+}
+
+.pagination > ul {
+  flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
