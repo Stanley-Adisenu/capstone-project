@@ -3,7 +3,7 @@
   
 <head>
     <meta charset="utf-8">
-    <title>Community</title>
+    <title>Chat</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -50,7 +50,7 @@ if (localStorage.getItem('darkMode') === "on") {
 }
 </script>
     <div class="page">
-      <div class="sidebar">
+        <div class="sidebar">
         <div class="sidebar__top">
           <button class="sidebar__close">
             <svg class="icon icon-close">
@@ -136,10 +136,18 @@ if (localStorage.getItem('darkMode') === "on") {
         <div class="page__center">
           <div class="page__row page__row_head page__row_border">
             <div style="display: flex;justify-content: space-between;" class="page__col">
-              <div class="page__hello h5"> <span>20</span> Rooms </div>
+              <div class="page__hello h5"> <h3>#FinalYearProject</h3></div>
+              <div style="display: flex;  ">
+                <h3 style="margin-right: 1rem; margin-left: 1rem;">Host</h3>
+                <a class="quality__item" href="#">
+                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
+                        <div class="quality__details">
+                          <div class="quality__category title">Benard Asokre</div>
+                          <div class="quality__info caption-sm">Bass</div>
+                        </div>
+                      </a>
+                </div>
 
-              <button  href="#create__room" data-effect="mfp-zoom-in" class="tabs__btn btn btn_black js-popup-open"><svg class="icon icon-plus-square"><use xlink:href="img/sprite.svg#icon-plus-square"></use></svg><span class="btn__icon">Create room</span>
-              </button>
             </div>
 
             <div class="page__col">
@@ -213,74 +221,95 @@ if (localStorage.getItem('darkMode') === "on") {
 
 
           <div class="page__row page__row_border">
-            <div class="page__col">
 
-            <a href="./chat.html">
-              <div class="inbox__item active marginator">
-                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                      
-                      <div class="inbox__details">
-                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
-                          <div>
-                            <div class="inbox__author caption">Joel Becker</div>
-                          <div class="inbox__time caption">12h <span>ago</span></div>
-                          </div>
-                          <button class="actions__btn"><svg class="icon icon-star">
-                              <use xlink:href="img/sprite.svg#icon-star"></use>
-                            </svg></button>
-                        </div>
-                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                        <div class="inbox__text">"Everything project"</div>
-                        <div style="display: flex; justify-content: space-between;" class="actions">
-                          <div style="display: flex;">
-                           <h4> <span>200 </span> joined</h4>
-                            <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
-                              <use xlink:href="img/sprite.svg#icon-comment"></use>
-                            </svg></button>
-                            </div>
-                            <button class="actions__btn"><svg class="icon icon-more">
-                              <use xlink:href="img/sprite.svg#icon-more"></use>
-                            </svg>
-                            </button>
-                            </div>
-                      </div>
-                    </div> 
-                  </a>
-              <!--End of that side --> 
-              <a href="./chat.html">
-              <div class="inbox__item active marginator">
-                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                      
-                      <div class="inbox__details">
-                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
-                          <div>
-                            <div class="inbox__author caption">Joel Becker</div>
-                          <div class="inbox__time caption">12h <span>ago</span></div>
-                          </div>
-                          <button class="actions__btn"><svg class="icon icon-star">
-                              <use xlink:href="img/sprite.svg#icon-star"></use>
-                            </svg></button>
-                        </div>
-                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                        <div class="inbox__text">"Everything project"</div>
-                        <div style="display: flex; justify-content: space-between;" class="actions">
-                          <div style="display: flex;">
-                           <h4> <span>200 </span> joined</h4>
-                            <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
-                              <use xlink:href="img/sprite.svg#icon-comment"></use>
-                            </svg></button>
-                            </div>
-                            <button class="actions__btn"><svg class="icon icon-more">
-                              <use xlink:href="img/sprite.svg#icon-more"></use>
-                            </svg>
-                            </button>
-                            </div>
-                      </div>
+            <div class="page__col ">
+                
+                <!--start of messages  section-->
+            <div class="message">
+
+                <div class="inbox__box">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Joel Becker</div>
+                      <div class="inbox__time caption">04:59</div>
                     </div>
-                    </a> 
-              <!--End of that side --> 
-              
-              
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inbox__box">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Joel Becker</div>
+                      <div class="inbox__time caption">04:59</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="inbox__box">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Joel Becker</div>
+                      <div class="inbox__time caption">04:59</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="inbox__box">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Joel Becker</div>
+                      <div class="inbox__time caption">04:59</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+            </div>
+                <!--End of messages section-->
+
+                <!--Text section-->
+                <div class="editor text__section">
+                  <div class="editor__wrap">
+                    <div  class="editor__head">
+
+                        <div class="editor__control">
+                            <label for="file-upload" class="custom-file-upload">
+                                <svg style="font-size: 1.3rem; margin-top: 1.3rem ; cursor: pointer; margin-left: 0.8rem;" class="icon icon-editor-pic">
+                            <use xlink:href="img/sprite.svg#icon-editor-pic"></use>
+                          </svg>                             
+                            <input id="file-upload" type="file" name="file">
+                            </label>
+                        </div>
+                          <button class="editor__add"></button>
+                    </div>
+                    <div class="editor__body">
+                      <div class="editor__field"><textarea class="editor__textarea" placeholder="text ..."></textarea></div>
+                    
+                    </div>
+                  </div><button style="display: flex; justify-content: center; padding: 1rem; margin-top: 1rem;" class=" btn  btn_black"><h3 style="margin-right: 0.6rem;">Send </h3> <svg class="icon icon-arrow-right">
+                         <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                         </svg></button>
+                </div>
             </div>
 
             
@@ -288,16 +317,16 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="page__col">
               <div class="page__group">             
                 <div class="widget widget_shadow widget_after">
-                  <div class="widget__title mr-auto">Top hosts.</div>
+                  <div class="widget__title mr-auto">Roomies</div>
                   <div class="quality quality_big">
-                    <div class="quality__list"><a class="quality__item" href="#">
+                    <div class="quality__list">
+                        <a class="quality__item" href="#">
                         <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
                         <div class="quality__details">
                           <div class="quality__category title">Benard Asokre<svg class="icon icon-arrow-right">
                               <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                             </svg></div>
                           <div class="quality__info caption-sm">Bass</div>
-                          <div class="quality__money caption">Rooms</div>
                         </div>
                       </a>
                       <a class="quality__item" href="#">
@@ -307,11 +336,9 @@ if (localStorage.getItem('darkMode') === "on") {
                               <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                             </svg></div>
                           <div class="quality__info caption-sm">Brw</div>
-                          <div class="quality__money caption">Rooms</div>
                         </div>
                       </a>
                       </div>
-                      <button class="quality__btn btn btn_black btn_wide">Show all hosts</button>
                   </div>
                 </div>
               </div>
@@ -321,17 +348,7 @@ if (localStorage.getItem('darkMode') === "on") {
       </div>
     </div>
 
-    <div class="pagination">
-    <ul class="container">       
-        <li><a href="index2679.html?page=1" class=" btn btn_black btn_wide" data-page="1">1</a></li>   
-        <li><a href="index4658.html?page=2" class=" btn btn_black btn_wide" data-page="2">2</a></li>  
-        <li><a href="index9ba9.html?page=3" class=" btn btn_black btn_wide" data-page="3">3</a></li>
-        <li><a href="indexfdb0.html?page=4" class=" btn btn_black btn_wide" data-page="4">4</a></li>   
-        <li><a href="indexaf4d.html?page=5" class="btn btn_black btn_wide" data-page="5">5</a></li>  
-        <li><a href="indexa54e.html?page=" class=" btn btn_black btn_wide"
-                data-page="">Next &#10095;</a></li>
-    </ul>
-</div>
+
 
 
 

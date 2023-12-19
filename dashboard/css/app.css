@@ -6251,7 +6251,7 @@ body.dark .files__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 24px;
+  padding: 11px;
   border-bottom: 1px solid #E4E4E4;
 }
 
@@ -6348,7 +6348,7 @@ body.dark .files__title {
 
 .editor__textarea {
   width: 100%;
-  height: 110px;
+  height: 35px;
   border: none;
   background: none;
   resize: none;
@@ -9645,4 +9645,17 @@ body.dark .mfp-bg {
   justify-content: center;
   gap: 1rem;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.message{
+  max-height:23rem;
+  overflow-y: scroll;
+}
+.text__section{
+ margin-top: 2rem;
+}
+
 
