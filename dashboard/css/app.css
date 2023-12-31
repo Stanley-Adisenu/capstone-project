@@ -9659,3 +9659,25 @@ input[type="file"] {
 }
 
 
+.quiz{
+  display: flex;
+  justify-content: center;
+  margin-top: -4rem;
+}
+.quiz__number{
+  font-size: 10rem;
+  color: #FF6E30;
+
+}
+.quiz__question{
+  font-size: 3rem;
+  margin-top: 7rem ;
+  color: #FF6E30;
+
+}
+
+#quiz{
+  background-image: url(../img/rocket1.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
