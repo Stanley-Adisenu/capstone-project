@@ -3,7 +3,7 @@
   
 <head>
     <meta charset="utf-8">
-    <title>Chat</title>
+    <title>Quiz</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -77,13 +77,13 @@ if (localStorage.getItem('darkMode') === "on") {
                       </div>
                     <div class="sidebar__text">AI assitant</div>
                   </a>
-                  <a class="sidebar__item active" href="community.html">
+                  <a class="sidebar__item " href="community.html">
                   <div class="sidebar__icon">
                     <img class="icon icon-discovery" src="./img/comment-add.svg" alt="">
                    </div>
                   <div class="sidebar__text">Community</div>
                   </a>                  
-                  <a class="sidebar__item" href="quiz.html">
+                  <a class="sidebar__item active" href="campaigns.html">
                     <div class="sidebar__icon"><svg class="icon icon-chart">
                         <use xlink:href="img/sprite.svg#icon-document"></use>
                       </svg></div>
@@ -130,26 +130,13 @@ if (localStorage.getItem('darkMode') === "on") {
                 </svg></span></span></label></div>
       </div>
 <!--End of sidebar-->
-
-
       <div class="page__wrapper">
         <div class="page__center">
-          <div class="page__row page__row_head page__row_border">
-            <div style="display: flex;justify-content: space-between;" class="page__col">
-              <div class="page__hello h5"> <h3>#FinalYearProject</h3></div>
-              <div style="display: flex;  ">
-                <h3 style="margin-right: 1rem; margin-left: 1rem;">Host</h3>
-                <a class="quality__item" href="#">
-                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
-                        <div class="quality__details">
-                          <div class="quality__category title">Benard Asokre</div>
-                          <div class="quality__info caption-sm">Bass</div>
-                        </div>
-                      </a>
-                </div>
-
+          <div class="page__row page__row_head">
+            <div class="page__col">
+              <div class="page__welcome h2">FAEN 401,</div>
+              <div class="2page__hello h5">Timer goes here</div>
             </div>
-
             <div class="page__col">
               <div class="header"><button class="header__burger"></button>
                 <div class="search">
@@ -167,12 +154,15 @@ if (localStorage.getItem('darkMode') === "on") {
                           </svg></div>
                       </a><a class="search__item" href="#">
                         <div class="search__preview bg-yellow"><img class="search__pic" src="img/figure-4.png" alt="" /></div>
-                       
+                        <div class="search__text">This monthStatements<svg class="icon icon-arrow-right">
+                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                          </svg></div>
                       </a><a class="search__item" href="#">
                         <div class="search__preview bg-blue-light"><img class="search__pic" src="img/figure-3.png" alt="" /></div>
-                        
-                      </a></div>
-                      <button class="search__btn btn btn_purple btn_wide">Advance Search</button>
+                        <div class="search__text">How manysales I got…<svg class="icon icon-arrow-right">
+                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                          </svg></div>
+                      </a></div><button class="search__btn btn btn_purple btn_wide">Advance Search</button>
                   </div>
                 </div><button class="header__search"><svg class="icon icon-search">
                     <use xlink:href="img/sprite.svg#icon-search"></use>
@@ -182,8 +172,7 @@ if (localStorage.getItem('darkMode') === "on") {
                     </svg><span class="notifications__counter">2</span></button>
                   <div class="notifications__wrap">
                     <div class="notifications__info h6">Recent Notification</div>
-                    <div class="notifications__list">
-                      <a class="notifications__item" href="notifications.html">
+                    <div class="notifications__list"><a class="notifications__item" href="notifications.html">
                         <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
                           <div class="notifications__status bg-blue"><img class="notifications__pic" src="img/chat.html" alt="" /></div>
                         </div>
@@ -194,8 +183,7 @@ if (localStorage.getItem('darkMode') === "on") {
                           </div>
                           <div class="notifications__text caption-sm">Commented on <span class="notifications__project">Collab Design</span></div>
                         </div>
-                      </a>
-                      <a class="notifications__item" href="notifications.html">
+                      </a><a class="notifications__item" href="notifications.html">
                         <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
                           <div class="notifications__status bg-green"><img class="notifications__pic" src="img/bag.svg" alt="" /></div>
                         </div>
@@ -206,186 +194,102 @@ if (localStorage.getItem('darkMode') === "on") {
                           </div>
                           <div class="notifications__text caption-sm">Just pushaded <span class="notifications__project">Sapiens Illustration</span></div>
                         </div>
-                      </a>
-          
-               
-                  
-                  
-                      </div>
+                      </a><a class="notifications__item" href="notifications.html">
+                        <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
+                          <div class="notifications__status bg-purple"><img class="notifications__pic" src="img/message.svg" alt="" /></div>
+                        </div>
+                        <div class="notifications__details">
+                          <div class="notifications__line">
+                            <div class="notifications__user caption">Sarah Saunders</div>
+                            <div class="notifications__time caption">14h</div>
+                          </div>
+                          <div class="notifications__text caption-sm">Sent you a message 📪 </div>
+                        </div>
+                      </a><a class="notifications__item" href="notifications.html">
+                        <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
+                          <div class="notifications__status bg-red"><img class="notifications__pic" src="img/heart.svg" alt="" /></div>
+                        </div>
+                        <div class="notifications__details">
+                          <div class="notifications__line">
+                            <div class="notifications__user caption">Sarah Saunders</div>
+                            <div class="notifications__time caption">21h</div>
+                          </div>
+                          <div class="notifications__text caption-sm">Liked <span class="notifications__project">Folio Agency</span></div>
+                        </div>
+                      </a><a class="notifications__item" href="notifications.html">
+                        <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
+                          <div class="notifications__status bg-blue"><img class="notifications__pic" src="img/chat.html" alt="" /></div>
+                        </div>
+                        <div class="notifications__details">
+                          <div class="notifications__line">
+                            <div class="notifications__user caption">Sarah Saunders</div>
+                            <div class="notifications__time caption">8h</div>
+                          </div>
+                          <div class="notifications__text caption-sm">Commented on <span class="notifications__project">Collab Design</span></div>
+                        </div>
+                      </a><a class="notifications__item" href="notifications.html">
+                        <div class="notifications__ava"><img class="notifications__pic" src="img/ava-1.png" alt="" />
+                          <div class="notifications__status bg-green"><img class="notifications__pic" src="img/bag.svg" alt="" /></div>
+                        </div>
+                        <div class="notifications__details">
+                          <div class="notifications__line">
+                            <div class="notifications__user caption">Glenn Greer</div>
+                            <div class="notifications__time caption">12h</div>
+                          </div>
+                          <div class="notifications__text caption-sm">Just pushaded <span class="notifications__project">Sapiens Illustration</span></div>
+                        </div>
+                      </a></div>
                     <div class="notifications__btns"><a class="notifications__btn btn btn_black" href="notifications.html">See all incoming activity</a></div>
                   </div>
                 </div><a class="header__user" href="#"><img class="header__pic" src="img/ava.png" alt="" /></a>
               </div>
             </div>
           </div>
+          <div class="page__content">
+            <div class="page__stat page__stat_pt32">
+
+              <div class="products products_main">
+                <div class="products__table">
+
+                  <div class="2page__hello h5">Question <span style="color: #FF6E30;">1</span> of <span style="color: #FF6E30;">10</span></div>
+                  
+                  <div class="questions 2page__hello h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci corrupti amet ea, eveniet minima architecto culpa neque reiciendis officia id fuga. Vitae deleniti debitis nulla maxime, atque beatae animi incidunt quibusdam est sapiente minima officiis eius dolor, facilis voluptas delectus fugiat temporibus explicabo laborum reiciendis harum ipsam, labore quasi eum. </div>
 
 
-          <div class="page__row page__row_border">
-
-            <div class="page__col ">
-                
-                <!--start of messages  section-->
-            <div class="message">
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-
-
-            </div>
-                <!--End of messages section-->
-
-                <!--Text section-->
-                <div class="editor text__section">
-                  <div class="editor__wrap">
-                    <div  class="editor__head">
-
-                        <div class="editor__control">
-                            <label for="file-upload" class="custom-file-upload">
-                                <svg style="font-size: 1.3rem; margin-top: 1.3rem ; cursor: pointer; margin-left: 0.8rem;" class="icon icon-editor-pic">
-                            <use xlink:href="img/sprite.svg#icon-editor-pic"></use>
-                          </svg>                             
-                            <input id="file-upload" type="file" name="file">
-                            </label>
-                        </div>
-                          <button class="editor__add"></button>
-                    </div>
-                    <div class="editor__body">
-                      <div class="editor__field"><textarea class="editor__textarea" placeholder="text ..."></textarea></div>
-                    
-                    </div>
-                  </div><button style="display: flex; justify-content: center; padding: 1rem; margin-top: 1rem;" class=" btn  btn_black"><h3 style="margin-right: 0.6rem;">Send </h3> <svg class="icon icon-arrow-right">
-                         <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                         </svg></button>
-                </div>
-            </div>
-
-            
-            
-            <div class="page__col">
-              <div class="page__group">             
-                <div class="widget widget_shadow widget_after">
-                  <div class="widget__title mr-auto">Roomies</div>
-                  <div class="quality quality_big">
-                    <div class="quality__list">
-                        <a class="quality__item" href="#">
-                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
-                        <div class="quality__details">
-                          <div class="quality__category title">Benard Asokre<svg class="icon icon-arrow-right">
-                              <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                            </svg></div>
-                          <div class="quality__info caption-sm">Bass</div>
-                        </div>
-                      </a>
-                      <a class="quality__item" href="#">
-                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-2.png" alt=""></div>
-                        <div class="quality__details">
-                          <div class="quality__category title">Broni Waku<svg class="icon icon-arrow-right">
-                              <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                            </svg></div>
-                          <div class="quality__info caption-sm">Brw</div>
-                        </div>
-                      </a>
+                   <div style="display: flex; gap: 2rem ;  flex-direction: column; flex-wrap: wrap;margin-top: 3rem ;">
+                    <a    class="quiz__options " href="#">
+                      <div class="schedules__details">
+                        <div class=""><span>A. </span>Law for engineers</div>
                       </div>
-                  </div>
+                    </a>
+
+                    <a    class="quiz__options " href="#">
+                      <div class="schedules__details">
+                        <div class=""><span>B. </span>Law for engineers</div>
+                      </div>
+                    </a>
+
+                    <a    class="quiz__options " href="#">
+                      <div class="schedules__details">
+                        <div class=""><span>C. </span>Law for engineers</div>
+                      </div>
+                    </a>
+
+                    <a    class="quiz__options " href="#">
+                      <div class="schedules__details">
+                        <div class=""><span>D. </span>Law for engineers</div>
+                      </div>
+                    </a>
+                </div> 
+
                 </div>
+                <div class="products__more"><button class="products__btn btn btn_black">Next</button></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-<div class="popup mfp-hide" id="create__room">
-      <form class="popup__form">
-        <div class="popup__title h6">Create a new room.</div>
-      
-        <div class="popup__fieldset">
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label ">Room name</div>
-              <div ><input class="field__input" type="text" placeholder="#Computer engineers"></div>
-            </div>        
-          </div>
-
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label">Topic</div>
-              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
-            </div>        
-          </div>
-          <div class="popup__field field">
-            <div class="field__label">Description</div>
-            <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
-          </div>
-        </div>
-        
-        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Create</button>
-       
-        
-      </form>
-
-    </div>
-
-
     <div class="popup mfp-hide" id="popup-settings">
       <form class="popup__form">
         <div class="popup__title h6">Account Settings</div>
@@ -446,9 +350,21 @@ if (localStorage.getItem('darkMode') === "on") {
           </div>
         </div><button class="popup__btn btn btn_black" type="submit">Update Profile</button>
       </form>
-
     </div>
     
+    
+    <div class="popup mfp-hide" id="quiz">
+      <form class="popup__form">
+        <div class="popup__title h2">Ready...</div> 
+        <div class="popup__title h4">Law for Engineers </div> <br> 
+        <div class="quiz">
+            <div class=" popup__title h2 quiz__number">10 </div>
+            <div class="quiz__question">questions</div>      
+        </div>
+
+       <button class="popup__btn btn btn_black" type="submit">Set...Go</button>
+      </form>
+    </div
     <!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/owl.carousel.min.js"></script>

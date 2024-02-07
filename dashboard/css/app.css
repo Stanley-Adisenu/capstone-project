@@ -9681,3 +9681,32 @@ input[type="file"] {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.questions{
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem;
+}
+
+.quiz__options{
+  border: 2px solid #6C5DD3;
+  padding: 1rem ;
+  width: 80%;
+  margin-left: 2.3rem ;
+  margin-top: -1rem;
+  border-radius: 1.2rem;
+  color: grey;
+  font-size: 1.4rem;
+  transition: 0.2s ease-in-out;
+}
+.quiz__options:hover{
+  transform: translateY(-0.3rem);
+  box-shadow: 0.1rem  0.1rem  1rem  0.07rem #6C5DD3 ;
+}
+
+.go__btn{
+  width: fit-content;
+ display: flex;
+ justify-content: center;
+ padding-top: 1rem;
+}
