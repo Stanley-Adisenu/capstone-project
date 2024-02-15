@@ -6245,6 +6245,7 @@ body.dark .files__title {
 .editor__wrap {
   background: #fafafa;
   border-radius: 12px;
+  opacity: 1;
 }
 
 .editor__head {
@@ -6347,7 +6348,7 @@ body.dark .files__title {
 }
 
 .editor__textarea {
-  width: 100%;
+  width: 88%;
   height: 35px;
   border: none;
   background: none;
@@ -9654,6 +9655,7 @@ input[type="file"] {
   max-height:23rem;
   overflow-y: scroll;
 }
+
 .text__section{
  margin-top: 2rem;
 }
@@ -9709,4 +9711,77 @@ input[type="file"] {
  display: flex;
  justify-content: center;
  padding-top: 1rem;
+}
+
+.suggestions{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+.suggestions p {
+border: 2px solid #3f8cff;
+border-radius: 1rem;
+width: 42%;
+height: 5rem;
+margin-left: 3%;
+margin-bottom: 1rem;
+margin-top: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+}
+.AI__text{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  margin-bottom: 1.2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.send__btn{
+position: absolute;
+margin-right: 1.6rem;
+top: 1.4rem;
+right: 0rem;
+color: #ffffff;
+
+}
+
+.send__btn .icon {
+fill: #ffffff;
+font-size: 1.8rem;
+}
+
+
+
+.AIeditor__textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 35px;
+  border: none;
+  background: none;
+  resize: none;
+  font-size: 14px;
+  margin-right: 1rem;
+  z-index: 3;
+}
+
+
+.AIeditor__body {
+width: 70vw;
+padding: 1rem  1rem;
+position: relative;
+}
+
+#welcome{
+  display: block;
+}
+.welcomehide{
+  display: none;
 }

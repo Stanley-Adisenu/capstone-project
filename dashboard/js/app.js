@@ -183,3 +183,13 @@ $('.activity__item').on('click', function () {
     $('.activity__item').removeClass('active');
     $(this).toggleClass('active');
 });
+
+//Hide welcome message
+function hider(){
+    var content = document.getElementByID("welcome");
+
+    if (content.style.display==="none") {
+        content.style.display==="block" ;                     
+    }
+   
+}

@@ -302,13 +302,13 @@ if (localStorage.getItem('darkMode') === "on") {
                         </div>
                           <button class="editor__add"></button>
                     </div>
-                    <div class="editor__body">
+                    <div style="position: relative;" class="editor__body">
                       <div class="editor__field"><textarea class="editor__textarea" placeholder="text ..."></textarea></div>
-                    
-                    </div>
-                  </div><button style="display: flex; justify-content: center; padding: 1rem; margin-top: 1rem;" class=" btn  btn_black"><h3 style="margin-right: 0.6rem;">Send </h3> <svg class="icon icon-arrow-right">
+                      <button style=" position: absolute; right: 0rem; top: 2.2rem;" class=" send__btn"> <svg class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                         </svg></button>
+                         </svg></button>                    
+                    </div>
+                  </div>
                 </div>
             </div>
 
