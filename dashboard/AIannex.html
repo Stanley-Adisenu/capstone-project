@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-
 <head>
     <meta charset="utf-8">
     <title>Payouts</title>
@@ -180,9 +178,10 @@ if (localStorage.getItem('darkMode') === "on") {
 
           <div  class="page__content ">
             <div class="ai-chat">
-              <div class="welcome" >
+
+              <div  id="welcome" >
             <div data-aos="fade-up" data-aos-duration="1000" style="margin-top: 10%; " class="page__hello h5">
-             <h1>Hello <span style="color:#FF6E30;">Steve</span>, how can I help you today ?</h1>
+             <h1>Hello <span style="color:#FF6E30;">Steve</span>,  how can I help you today ?</h1>
              </div>
                 <br><br><br>
                 <div class="page__hello h5"> <h4>Explore some Ideas...</h4></div>
@@ -202,8 +201,8 @@ if (localStorage.getItem('darkMode') === "on") {
                   <div class="editor__wrap">
                     <div class="AIeditor__body">
                       <div class="">
-                        <textarea class="editor__textarea" placeholder="text ..."></textarea></div>
-                        <button  class="send__btn"><svg class="icon icon-arrow-right">
+                        <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
+                        <button  id="send__btn"   onclick="hide()" class="send__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>
                     </div>

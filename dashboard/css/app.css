@@ -9654,6 +9654,8 @@ input[type="file"] {
 .message{
   max-height:23rem;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
 
 .text__section{
@@ -9748,15 +9750,12 @@ margin-right: 1.6rem;
 top: 1.4rem;
 right: 0rem;
 color: #ffffff;
-
 }
 
 .send__btn .icon {
-fill: #ffffff;
+fill:#8e7699;
 font-size: 1.8rem;
 }
-
-
 
 .AIeditor__textarea {
   display: flex;
@@ -9784,4 +9783,12 @@ position: relative;
 }
 .welcomehide{
   display: none;
+}
+
+#AI__message {
+  display: none;
+ max-height: 71vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }

@@ -184,12 +184,48 @@ $('.activity__item').on('click', function () {
     $(this).toggleClass('active');
 });
 
-//Hide welcome message
-function hider(){
-    var content = document.getElementByID("welcome");
+//Hide welcome messageand display texts 
+function hide(){
+    var inputElement = document.getElementById("input");
+    var x = document.getElementById("welcome");
+    var chat = document.getElementById("AI__message");
+    var values = inputElement.value;
+    var len = values.length;
 
-    if (content.style.display==="none") {
-        content.style.display==="block" ;                     
+    if (len < 1){
+        x.style.display="block";
+        chat.style.display="none";
     }
-   
+    else  {
+        if ( x.style.display ==="block" && chat.style.display==="none"){
+            x.style.display="none";
+            chat.style.display="block";
+
+        } 
+        else{
+            x.style.display="none";
+            chat.style.display="block";
+
+
+        }
+    }
+  
+}
+
+//display send button only after a valid input 
+function alerter() {
+    var y = document.getElementById("send__btn");
+    var inputElement = document.getElementById("input");
+
+    // Add an event listener for the 'keyup' event
+    inputElement.addEventListener("keyup", function() {
+        var len = inputElement.value;
+
+        // Hide or show the button based on the length
+        if (len < 1) {
+            y.style.display = "none";
+        } else {
+            y.style.display = "block";
+        }  
+    });
 }

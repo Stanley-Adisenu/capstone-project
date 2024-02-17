@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-
 <head>
     <meta charset="utf-8">
     <title>Payouts</title>
@@ -32,6 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./js/chat.js"></script>
     <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
 if (viewportmeta) {
   if (screen.width < 375) {
@@ -180,31 +179,109 @@ if (localStorage.getItem('darkMode') === "on") {
 
           <div  class="page__content ">
             <div class="ai-chat">
-
+            <div class="chatbot__chat">
               <div  id="welcome" >
             <div data-aos="fade-up" data-aos-duration="1000" style="margin-top: 10%; " class="page__hello h5">
              <h1>Hello <span style="color:#FF6E30;">Steve</span>,  how can I help you today ?</h1>
              </div>
                 <br><br><br>
                 <div class="page__hello h5"> <h4>Explore some Ideas...</h4></div>
-
             <!--start of suggestions  section-->
             <div data-aos="fade-up" data-aos-duration="1700" class="suggestions " >
               <p>Teach me AI </p>  
-              <p>Plan my day</p>   
-
-                    
+              <p>Plan my day</p>         
             </div>
-                <!--End of suggestions section-->
               </div>
+              <!--End of suggestions section-->
+
+              <!--start of messages  section-->
+            <div id="AI__message">
+
+                <div  class="inbox__box my__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Me</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inbox__box bot__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Bard</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Sure! cout<< ""Hello bomb!"</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="inbox__box  my__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Me</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inbox__box bot__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Bard</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Sure! cout<< ""Hello bomb!"</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="inbox__box  my__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Me</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inbox__box  bot__message">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Bard</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Sure! cout<< ""Hello bomb! "</p>
+                    </div>
+                  </div>
+                </div>
+             
+
+
+
+
+            </div>
+                <!--End of messages section-->
+            </div>
    
                 <!--Text section-->
                 <div class="AI__text">
                   <div class="editor__wrap">
                     <div class="AIeditor__body">
                       <div class="">
-                        <textarea class="editor__textarea userinput" placeholder="text ..." oninput="handleInput()"></textarea></div>
-                        <button  class="send__btn"><svg onclick="hider()" class="icon icon-arrow-right">
+                        <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
+                        <button  id="send__btn"   onclick="hide()" class="send__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>
                     </div>
