@@ -281,7 +281,7 @@ sendBtn.onclick = function(){
 
         fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
-            console.log(ChatBotResponse.value);
+            console.log(ChatBotResponse);
             ChatBotResponse.innerHTML = data.choices[0].message.content;
             
        // const UserTypedMessage = escapeHtml(messageBar.value); // Sanitize user input
