@@ -210,7 +210,7 @@ const messageBar = document.querySelector(".AIeditor__body textarea");
 const sendBtn = document.querySelector(".send__btn");
 const messageBox = document.querySelector("#AI__message");
 let API_URL = "https://api.openai.com/v1/chat/completions";
-let API_KEY = "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";
+let API_KEY = "";
 
 sendBtn.onclick = function(){
     if(messageBar.value.length > 0){
@@ -281,8 +281,8 @@ sendBtn.onclick = function(){
 
         fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
-            console.log(ChatBotResponse);
             ChatBotResponse.innerHTML = data.choices[0].message.content;
+            
             
        // const UserTypedMessage = escapeHtml(messageBar.value); // Sanitize user input
             ChatBotResponse.classList.remove("new"); 
