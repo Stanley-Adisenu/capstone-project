@@ -1,18 +1,18 @@
-const chatbotToggler = document.querySelector(".chatbot-toggler");
-const closeBtn = document.querySelector(".close-btn");
-const chatbox = document.querySelector(".chatbox");
-const chatInput = document.querySelector(".chat-input textarea");
-const sendChatBtn = document.querySelector(".chat-input span");
+//const chatbotToggler = document.querySelector(".chatbot-toggler");
+//const closeBtn = document.querySelector(".close-btn");
+const chatbox = document.querySelector(".AI__message");
+const chatInput = document.querySelector(".AIeditor__body textarea");
+const sendChatBtn = document.querySelector(".AIeditor__body button");
 
 let userMessage = null; // Variable to store user's message
 const API_KEY = "PASTE-YOUR-API-KEY"; // Paste your API key here
-const inputInitHeight = chatInput.scrollHeight;
+//const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
     // Create a chat <li> element with passed message and className
-    const chatLi = document.createElement("li");
-    chatLi.classList.add("chat", `${className}`);
-    let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+    const chatLi = document.createElement("div");
+    chatLi.classList.add("inbox__box", `${className}`);
+    let chatContent = className === "my__message" ? `<p></p>` : ` <div class="inbox__ava"><img class="inbox__pic src="img/ava-2.png" alt=""></div>`;
     chatLi.innerHTML = chatContent;
     chatLi.querySelector("p").textContent = message;
     return chatLi; // return chat <li> element
@@ -50,15 +50,15 @@ const handleChat = () => {
 
     // Clear the input textarea and set its height to default
     chatInput.value = "";
-    chatInput.style.height = `${inputInitHeight}px`;
+    //chatInput.style.height = `${inputInitHeight}px`;
 
     // Append the user's message to the chatbox
-    chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-    chatbox.scrollTo(0, chatbox.scrollHeight);
+    chatbox.appendChild(createChatLi(userMessage, "my__message"));
+   // chatbox.scrollTo(0, chatbox.scrollHeight);
     
     setTimeout(() => {
         // Display "Thinking..." message while waiting for the response
-        const incomingChatLi = createChatLi("Thinking...", "incoming");
+        const incomingChatLi = createChatLi("Thinking...", "bot__message");
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
@@ -71,15 +71,15 @@ chatInput.addEventListener("input", () => {
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
 
-chatInput.addEventListener("keydown", (e) => {
-    // If Enter key is pressed without Shift key and the window 
-    // width is greater than 800px, handle the chat
-    if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
-        e.preventDefault();
-        handleChat();
-    }
-});
+// chatInput.addEventListener("keydown", (e) => {
+//     // If Enter key is pressed without Shift key and the window 
+//     // width is greater than 800px, handle the chat
+//     if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+//         e.preventDefault();
+//         handleChat();
+//     }
+// });
 
-sendChatBtn.addEventListener("click", handleChat);
-closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+//sendChatBtn.addEventListener("click", handleChat);
+//closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+//chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));

@@ -6349,11 +6349,13 @@ body.dark .files__title {
 
 .editor__textarea {
   width: 88%;
-  height: 35px;
+  height: 45px;
   border: none;
   background: none;
   resize: none;
   font-size: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }
 
 .editor__gallery {
@@ -9787,8 +9789,12 @@ position: relative;
 
 #AI__message {
   display: none;
- max-height: 71vh;
+ max-height: 67vh;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
+
+.inbox__box p{
+  white-space: pre-wrap;
+ }

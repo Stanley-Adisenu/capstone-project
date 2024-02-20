@@ -30,7 +30,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="./js/chat.js"></script>
     <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
 if (viewportmeta) {
   if (screen.width < 375) {
@@ -196,81 +195,8 @@ if (localStorage.getItem('darkMode') === "on") {
 
               <!--start of messages  section-->
             <div id="AI__message">
-
-                <div  class="inbox__box my__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Me</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box bot__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Bard</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Sure! cout<< ""Hello bomb!"</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="inbox__box  my__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Me</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box bot__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Bard</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Sure! cout<< ""Hello bomb!"</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="inbox__box  my__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Me</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box  bot__message">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Bard</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Sure! cout<< ""Hello bomb! "</p>
-                    </div>
-                  </div>
-                </div>
-             
-
-
-
-
+                
+              
             </div>
                 <!--End of messages section-->
             </div>
@@ -279,9 +205,8 @@ if (localStorage.getItem('darkMode') === "on") {
                 <div class="AI__text">
                   <div class="editor__wrap">
                     <div class="AIeditor__body">
-                      <div class="">
-                        <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
-                        <button  id="send__btn"   onclick="hide()" class="send__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
+                        <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea>
+                        <button  id="send__btn"    class="send__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>
                     </div>

@@ -184,33 +184,6 @@ $('.activity__item').on('click', function () {
     $(this).toggleClass('active');
 });
 
-//Hide welcome messageand display texts 
-function hide(){
-    var inputElement = document.getElementById("input");
-    var x = document.getElementById("welcome");
-    var chat = document.getElementById("AI__message");
-    var values = inputElement.value;
-    var len = values.length;
-
-    if (len < 1){
-        x.style.display="block";
-        chat.style.display="none";
-    }
-    else  {
-        if ( x.style.display ==="block" && chat.style.display==="none"){
-            x.style.display="none";
-            chat.style.display="block";
-
-        } 
-        else{
-            x.style.display="none";
-            chat.style.display="block";
-
-
-        }
-    }
-  
-}
 
 //display send button only after a valid input 
 function alerter() {
@@ -229,3 +202,100 @@ function alerter() {
         }  
     });
 }
+
+
+//code for chatbot
+const x = document.getElementById("welcome");
+const messageBar = document.querySelector(".AIeditor__body textarea");
+const sendBtn = document.querySelector(".send__btn");
+const messageBox = document.querySelector("#AI__message");
+let API_URL = "https://api.openai.com/v1/chat/completions";
+let API_KEY = "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";
+
+sendBtn.onclick = function(){
+    if(messageBar.value.length > 0){
+        x.style.display="none";
+        messageBox.style.display="block";
+
+        const UserTypedMessage = escapeHtml(messageBar.value); // Sanitize user input
+        messageBar.value = "";
+        
+        let message = 
+        `<div class="inbox__box my__message">
+            <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+            <div class="inbox__details">
+                <div class="inbox__head">
+                    <div class="inbox__author title">Me</div>
+                </div>
+                <div class="inbox__title title">
+                    <p>${UserTypedMessage}</p>
+                </div>
+            </div>
+        </div>`;
+        
+        // Function to escape HTML characters
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    
+       messageBox.innerHTML += message;
+        
+
+      let response = 
+      ` <div class="inbox__box bot__message">
+      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+      <div class="inbox__details">
+        <div class="inbox__head">
+          <div class="inbox__author title">Bard</div>
+        </div>
+        <div class="inbox__title title">
+          <p class="new">...</p>
+        </div>
+      </div>
+    </div>`
+
+      messageBox.insertAdjacentHTML("beforeend",message);
+
+
+      setTimeout(()=>{
+        messageBox.insertAdjacentHTML("beforeend",response);
+
+        const requestOptions ={
+            method : "POST",
+            headers:{
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [{"role": "user", "content": UserTypedMessage}],
+            })
+        }
+
+        fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+            const ChatBotResponse = document.querySelector(".bot__message .new");
+            console.log(ChatBotResponse.value);
+            ChatBotResponse.innerHTML = data.choices[0].message.content;
+            
+       // const UserTypedMessage = escapeHtml(messageBar.value); // Sanitize user input
+            ChatBotResponse.classList.remove("new"); 
+        }).catch((error) => {
+            ChatBotResponse.innerHTML = "OOPs! an error occurred ";
+        })
+    
+      },100);
+    }
+    else{
+        x.style.display="none";
+        chat.style.display="block";
+    }
+}
+
+
