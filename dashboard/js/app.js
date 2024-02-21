@@ -291,8 +291,7 @@ sendBtn.onclick = function(){
 
         }).catch((error) => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
-            const botPic = document.querySelector(".bot__message .bot__pic");
-            botPic.classList.remove("bot__pic"); 
+            
             ChatBotResponse.innerHTML = "Oops &#x1F61E, an error occurred. Kindly try again &#x1F97A ";
         })
     
