@@ -9798,3 +9798,26 @@ position: relative;
 .inbox__box p{
   white-space: pre-wrap;
  }
+
+.chatbot__title{
+  font-size: 1.1rem;
+}
+
+.bot__pic {
+   animation: rotateImage 1.2s linear infinite; /* Apply the rotation animation */
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg); /* Initial rotation angle */
+}
+50% {
+    transform: rotate(360deg); /* First rotation (1s) */
+}
+75% {
+    transform: rotate(360deg); /* Pause (0.5s) */
+}
+100% {
+    transform: rotate(720deg); /* Second rotation (1s) */
+}
+}

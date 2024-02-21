@@ -213,6 +213,16 @@ let API_URL = "https://api.openai.com/v1/chat/completions";
 let API_KEY = "";
 
 sendBtn.onclick = function(){
+    function escapeHtml(text) {
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
     if(messageBar.value.length > 0){
         x.style.display="none";
         messageBox.style.display="block";
@@ -222,40 +232,31 @@ sendBtn.onclick = function(){
         
         let message = 
         `<div class="inbox__box my__message">
-            <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+            <div class="inbox__ava"><img class="inbox__pic " src="img/ava-2.png" alt=""></div>
             <div class="inbox__details">
                 <div class="inbox__head">
-                    <div class="inbox__author title">Me</div>
+                    <div class="chatbot__title color-purple"><b>Me</b></div>
                 </div>
-                <div class="inbox__title title">
+                <div class="inbox__title ">
                     <p>${UserTypedMessage}</p>
                 </div>
             </div>
         </div>`;
         
         // Function to escape HTML characters
-        function escapeHtml(text) {
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-        }
+        
     
-       messageBox.innerHTML += message;
+      // messageBox.innerHTML += message;
         
 
       let response = 
       ` <div class="inbox__box bot__message">
-      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+      <div class="inbox__ava"><img class="inbox__pic bot__pic" src="img/ava-2.png" alt=""></div>
       <div class="inbox__details">
         <div class="inbox__head">
-          <div class="inbox__author title">Bard</div>
+          <div class="chatbot__title color-purple"><b>Bard</b></div>
         </div>
-        <div class="inbox__title title">
+        <div class="inbox__title ">
           <p class="new">...</p>
         </div>
       </div>
@@ -281,13 +282,18 @@ sendBtn.onclick = function(){
 
         fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
-            ChatBotResponse.innerHTML = data.choices[0].message.content;
-            
-            
-       // const UserTypedMessage = escapeHtml(messageBar.value); // Sanitize user input
+            const botPic = document.querySelector(".bot__message .bot__pic");
+            botPic.classList.remove("bot__pic"); 
+            ChatBotResponse.innerHTML = escapeHtml(data.choices[0].message.content);
+
             ChatBotResponse.classList.remove("new"); 
+            console.log(ChatBotResponse);
+
         }).catch((error) => {
-            ChatBotResponse.innerHTML = "OOPs! an error occurred ";
+            const ChatBotResponse = document.querySelector(".bot__message .new");
+            const botPic = document.querySelector(".bot__message .bot__pic");
+            botPic.classList.remove("bot__pic"); 
+            ChatBotResponse.innerHTML = "Oops &#x1F61E, an error occurred. Kindly try again &#x1F97A ";
         })
     
       },100);
