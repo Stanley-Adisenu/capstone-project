@@ -225,7 +225,20 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="page__col ">
                 
                 <!--start of messages  section-->
-            <div class="message">
+            <div class="chat__message">
+
+                <div class="inbox__box">
+                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                  <div class="inbox__details">
+                    <div class="inbox__head">
+                      <div class="inbox__author title">Joel Becker</div>
+                      <div class="inbox__time caption">04:59</div>
+                    </div>
+                    <div class="inbox__text">
+                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="inbox__box">
                   <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
@@ -288,8 +301,9 @@ if (localStorage.getItem('darkMode') === "on") {
                 <!--End of messages section-->
 
                 <!--Text section-->
-                <div class="editor text__section">
-                  <div class="editor__wrap">
+                <div class=" ">
+                  <div class="chat__text">
+                    <div class="editor__wrap">
                     <div  class="editor__head">
                         <div class="editor__control">
                             <label for="file-upload" class="custom-file-upload">
@@ -299,16 +313,19 @@ if (localStorage.getItem('darkMode') === "on") {
                             <input id="file-upload" type="file" name="file">
                             </label>
                         </div>
-                          <button class="editor__add"></button>
+                        <button class="editor__add"></button>
+
                     </div>
                     <div style="position: relative;" class="editor__body">
                       <div class="editor__field">
                           <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
-                        <button  id="send__btn" class="send__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
+                        <button onclick="sendbutton()"  id="send__btn" class="send__btn chat__send"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>                    
                     </div>
-                  </div>
+                  </div> 
+                    </div>
+                 
                 </div>
             </div>
 

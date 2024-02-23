@@ -1449,6 +1449,7 @@ body.dark .page__content_pt64 {
   line-height: 24px;
   font-weight: 500;
   color: #ffffff;
+  max-width: 100vh;
 }
 
 .sidebar__profile {
@@ -6252,8 +6253,9 @@ body.dark .files__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 11px;
+  padding: 7px;
   border-bottom: 1px solid #E4E4E4;
+  width: 43vw;
 }
 
 .editor__control {
@@ -6344,7 +6346,7 @@ body.dark .files__title {
 }
 
 .editor__body {
-  padding: 32px 24px;
+  padding: 25px 25px;
 }
 
 .editor__textarea {
@@ -7911,6 +7913,11 @@ body.dark .mfp-bg {
     flex: 0 0 calc(50% - 32px);
     max-width: calc(50% - 32px);
     margin: 0 16px;
+    display: none;
+  }
+  .editor__head {
+    width: 60vw;
+    justify-content: center;
   }
   .page__group .widget:not(:last-child) {
     margin-bottom: 0;
@@ -8794,6 +8801,8 @@ body.dark .mfp-bg {
   }
   .sidebar__bottom {
     padding: 0 40px;
+    position: fixed;
+    bottom: 0;
   }
   .sidebar .switch_theme .switch__in {
     padding-left: 56px;
@@ -9389,6 +9398,7 @@ body.dark .mfp-bg {
   }
   .editor__head {
     padding: 24px 16px;
+    width: 90vw;
   }
   .editor__body {
     padding: 24px 16px;
@@ -9804,20 +9814,30 @@ position: relative;
 }
 
 .bot__pic {
-   animation: rotateImage 1.2s linear infinite; /* Apply the rotation animation */
+   animation: rotateImage 1.2s linear infinite
 }
-
 @keyframes rotateImage {
   0% {
-    transform: rotate(0deg); /* Initial rotation angle */
+    transform: rotate(0deg); 
 }
 50% {
-    transform: rotate(360deg); /* First rotation (1s) */
+    transform: rotate(360deg); 
 }
 75% {
-    transform: rotate(360deg); /* Pause (0.5s) */
+    transform: rotate(360deg);
 }
 100% {
-    transform: rotate(720deg); /* Second rotation (1s) */
+    transform: rotate(720deg);
 }
+}
+.chat__text{
+  position: fixed;
+  bottom: .7rem;
+}
+.chat__message{
+  max-height:58vh;
+  margin-top: -2rem;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 }

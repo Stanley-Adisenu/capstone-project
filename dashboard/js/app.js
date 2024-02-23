@@ -185,6 +185,50 @@ $('.activity__item').on('click', function () {
 });
 
 
+//chat for chatroom 
+const textBar = document.querySelector(".editor__body textarea");
+const sendbtn = document.querySelector(".chat__send");
+const messagebox = document.querySelector(".chat__message");
+
+function sendbutton (){
+     // Function to escape HTML characters
+
+     function escapeHtml(text) {
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+    if(textbar.value.length > 0){
+
+        const UserTypedMessage = escapeHtml(textBar.value); // Sanitize user input
+        textbar.value = "";
+        console.log(UserTypedMessage);
+        
+        let message = 
+        `<div class="inbox__box my__message">
+            <div class="inbox__ava"><img class="inbox__pic " src="img/ava-2.png" alt=""></div>
+            <div class="inbox__details">
+                <div class="inbox__head">
+                    <div class="chatbot__title color-purple"><b>Me</b></div>
+                </div>
+                <div class="inbox__title ">
+                    <p>${UserTypedMessage}</p>
+                </div>
+            </div>
+        </div>`;
+      messagebox.insertAdjacentHTML("beforeend",message);  
+    }
+}
+
+
+
+
+
 //display send button only after a valid input 
 function alerter() {
     var y = document.getElementById("send__btn");
@@ -213,6 +257,8 @@ let API_URL = "https://api.openai.com/v1/chat/completions";
 let API_KEY = "";
 
 sendBtn.onclick = function(){
+            // Function to escape HTML characters
+
     function escapeHtml(text) {
         const map = {
             '&': '&amp;',
@@ -242,12 +288,7 @@ sendBtn.onclick = function(){
                 </div>
             </div>
         </div>`;
-        
-        // Function to escape HTML characters
-        
-    
-      // messageBox.innerHTML += message;
-        
+         
 
       let response = 
       ` <div class="inbox__box bot__message">
@@ -292,14 +333,17 @@ sendBtn.onclick = function(){
         }).catch((error) => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
             ChatBotResponse.classList.remove("new"); 
+            const botPic = document.querySelector(".bot__message .bot__pic");
+            botPic.classList.remove("bot__pic"); 
             ChatBotResponse.innerHTML = "Oops &#x1F61E, an error occurred. Kindly try again &#x1F97A ";
         })
     
       },100);
     }
     else{
-        x.style.display="none";
-        chat.style.display="block";
+        x.style.display="block";
+        messageBox.style.display="none";
+
     }
 }
 
