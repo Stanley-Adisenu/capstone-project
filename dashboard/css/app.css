@@ -1231,6 +1231,9 @@ body.dark .page__content_pt64 {
   flex-shrink: 0;
   width: 256px;
   height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent ;
   padding: 140px 0 72px;
   background: #ffffff;
   border-right: 1px solid #E4E4E4;
