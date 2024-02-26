@@ -77,16 +77,18 @@ if (localStorage.getItem('darkMode') === "on") {
                       </div>
                     <div class="sidebar__text">AI assitant</div>
                   </a>
-                  <a class="sidebar__item active" href="community.html">
+                  <a  class="sidebar__item active" href="community.html">
                   <div class="sidebar__icon">
-                    <img class="icon icon-discovery" src="./img/comment-add.svg" alt="">
+                    <img  class="icon icon-discovery" src="./img/comment-add.svg" alt="">
                    </div>
                   <div class="sidebar__text">Community</div>
                   </a>                  
                   <a class="sidebar__item" href="quiz.html">
-                    <div class="sidebar__icon"><svg class="icon icon-chart">
+                    <div class="sidebar__icon">
+                      <svg class="icon icon-chart">
                         <use xlink:href="img/sprite.svg#icon-document"></use>
-                      </svg></div>
+                      </svg>
+                      </div>
                     <div class="sidebar__text">Quiz</div>
                   </a>                  
                   <a class="sidebar__item" href="#">                    
@@ -227,74 +229,7 @@ if (localStorage.getItem('darkMode') === "on") {
                 <!--start of messages  section-->
             <div class="chat__message">
 
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="inbox__box">
-                  <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                  <div class="inbox__details">
-                    <div class="inbox__head">
-                      <div class="inbox__author title">Joel Becker</div>
-                      <div class="inbox__time caption">04:59</div>
-                    </div>
-                    <div class="inbox__text">
-                      <p>Can someone teach me to print "Hello world"  in Russian.</p>
-                    </div>
-                  </div>
-                </div>
-
-
+                
 
 
             </div>
@@ -319,7 +254,7 @@ if (localStorage.getItem('darkMode') === "on") {
                     <div style="position: relative;" class="editor__body">
                       <div class="editor__field">
                           <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
-                        <button onclick="sendbutton()"  id="send__btn" class="send__btn chat__send"  ><svg style="display: block;"  class="icon icon-arrow-right">
+                        <button onclick="sender()"  id="send__btn" class="chat__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>                    
                     </div>

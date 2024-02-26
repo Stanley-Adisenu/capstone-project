@@ -184,46 +184,44 @@ $('.activity__item').on('click', function () {
     $(this).toggleClass('active');
 });
 
+//chat in comunnity
+    function sender(){
+    const textArea = document.querySelector(".editor__field textarea");
+    const textBox = document.querySelector(".chat__message");
 
-//chat for chatroom 
-const textBar = document.querySelector(".editor__body textarea");
-const sendbtn = document.querySelector(".chat__send");
-const messagebox = document.querySelector(".chat__message");
+        // Function to escape HTML characters
 
-function sendbutton (){
-     // Function to escape HTML characters
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+     if(textArea.value.length >0){
+        const UserTypedMessage = escapeHtml(textArea.value); // Sanitize user input
+        textArea.value="";
 
-     function escapeHtml(text) {
-        const map = {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
-        };
-        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    }
-    if(textbar.value.length > 0){
-
-        const UserTypedMessage = escapeHtml(textBar.value); // Sanitize user input
-        textbar.value = "";
-        console.log(UserTypedMessage);
-        
         let message = 
-        `<div class="inbox__box my__message">
-            <div class="inbox__ava"><img class="inbox__pic " src="img/ava-2.png" alt=""></div>
-            <div class="inbox__details">
-                <div class="inbox__head">
-                    <div class="chatbot__title color-purple"><b>Me</b></div>
-                </div>
-                <div class="inbox__title ">
-                    <p>${UserTypedMessage}</p>
-                </div>
-            </div>
-        </div>`;
-      messagebox.insertAdjacentHTML("beforeend",message);  
-    }
-}
+        `<div class="inbox__box">
+        <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+        <div class="inbox__details">
+          <div class="inbox__head">
+            <div class="inbox__author title">Steve</div>
+            <div class="inbox__time caption">04:59</div>
+          </div>
+          <div class="inbox__text">
+            <p>${UserTypedMessage}</p>
+          </div>
+        </div>
+      </div>`;
+        textBox.insertAdjacentHTML("beforeend",message);
+     }   
+ }
+
 
 
 
@@ -249,14 +247,13 @@ function alerter() {
 
 
 //code for chatbot
+const sendBtn = document.querySelector(".send__btn");
+sendBtn.onclick = function(){
 const x = document.getElementById("welcome");
 const messageBar = document.querySelector(".AIeditor__body textarea");
-const sendBtn = document.querySelector(".send__btn");
 const messageBox = document.querySelector("#AI__message");
 let API_URL = "https://api.openai.com/v1/chat/completions";
 let API_KEY = "";
-
-sendBtn.onclick = function(){
             // Function to escape HTML characters
 
     function escapeHtml(text) {
@@ -345,6 +342,8 @@ sendBtn.onclick = function(){
         messageBox.style.display="none";
 
     }
-}
+    }
 
 
+
+   

@@ -9841,3 +9841,15 @@ position: relative;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
 }
+
+.chat__btn{
+  position: absolute;
+  margin-right: 1.6rem;
+  top: 1.4rem;
+  right: 0rem;
+  color: #ffffff;
+  }
+.chat__btn .icon {
+  fill:#8e7699;
+  font-size: 1.8rem;
+  }
