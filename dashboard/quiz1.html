@@ -295,14 +295,17 @@ if (localStorage.getItem('darkMode') === "on") {
     <div class="popup mfp-hide" id="popup-settings">
       <form class="popup__form">
         <div class="popup__title h6">Account Settings</div>
-        <div class="popup__tags"><a class="popup__tag active" href="#">Profile</a><a class="popup__tag" href="#">Password</a><a class="popup__tag" href="#">Email</a><a class="popup__tag" href="#">Notification</a><a class="popup__tag" href="#">Settings</a></div><select class="popup__select mobile-show">
-          <option>Profile</option>
-          <option>Password</option>
-          <option>Email</option>
-          <option>Notification</option>
-          <option>Settings</option>
+        <div  class="popup__tags">
+          <a onclick="link1ed()" id="link1" class=" popup__tag active" href="#">Profile</a>
+          <a onclick="link2ed()" id="link2"  class=" popup__tag" href="#">Password</a>
+          <a onclick="link3ed()" id="link3"  class=" popup__tag" href="#">Rooms</a>
+          </div>
+        <select onchange="handleSelectionChange()" id="profile__select" class="popup__select mobile-show">
+         <option value="link1">Profile</option> 
+          <option value="link2">Password</option>
+          <option value="link3">Rooms</option>
         </select>
-        <div class="popup__user">
+        <div id="avatar" class="popup__user">
           <div class="popup__title h6 mobile-show">Your Profile</div>
           <div class="popup__category caption-sm">Your Avatar</div>
           <div class="popup__line">
@@ -316,33 +319,24 @@ if (localStorage.getItem('darkMode') === "on") {
           </div>
         </div>
         <div class="popup__fieldset">
-          <div class="popup__row">
+          <div id="section1">
+            <div class="popup__row">
             <div class="popup__field field">
               <div class="field__label">Your Full Name</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
             <div class="popup__field field">
-              <div class="field__label">Display Name</div>
+              <div class="field__label">Username</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
           </div>
           <div class="popup__row">
             <div class="popup__field field">
-              <div class="field__label">Role</div>
+              <div class="field__label">Department</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
             <div class="popup__field field">
-              <div class="field__label">Location</div>
-              <div class="field__wrap"><input class="field__input" type="text"></div>
-            </div>
-          </div>
-          <div class="popup__row">
-            <div class="popup__field field">
-              <div class="field__label">Role</div>
-              <div class="field__wrap"><input class="field__input" type="text"></div>
-            </div>
-            <div class="popup__field field">
-              <div class="field__label">Team</div>
+              <div class="field__label">Email</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
           </div>
@@ -350,8 +344,154 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="field__label">Bio</div>
             <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
           </div>
+            </div>
+          
+
+          <div id="section2">
+            <div class="popup__field field ">
+              <div class="field__label">Old Password</div>
+              <div class="field__wrap"><input type="password" class="field__input" ></div>
+            </div>
+            <div>
+              <div  style="margin-top: 1rem;" class="popup__field field ">
+                <div class="field__label">New Password</div>
+                <div class="field__wrap"><input type="password" class="field__input" ></div>
+              </div>
+              <div  style="margin-top: 1rem;" class="popup__field field">
+                <div class="field__label">Confirm New Password</div>
+                <div class="field__wrap"><input type="password" class="field__input" ></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="section3">
+            <div class="created__room">
+              <div class="popup__category caption-sm">Created</div>
+              <!--Begining of that side-->
+               <a href="./chat.html">
+                <div class="inbox__item active marginator">                        
+                        <div class="inbox__details">
+                        
+                          <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
+                          <div class="inbox__text">"Everything project"</div>
+                          <div style="display: flex; justify-content: space-between;" class="actions">
+                            <div style="display: flex;">
+                             <h4> <span>200 </span> joined</h4>
+                              <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
+                                <use xlink:href="img/sprite.svg#icon-comment"></use>
+                              </svg></button>
+                              </div>
+                              <button  href="#edit__room" data-effect="mfp-zoom-in" class=" actions__btn js-popup-open"><svg class="icon icon-more">
+                              <use xlink:href="img/sprite.svg#icon-more"></use>
+                            </svg>
+                            </button>
+                              </div>
+                        </div>
+                      </div>
+                      </a> 
+                <!--End of that side -->
+            </div>
+            
+            <div class="joined__room">
+              <div class="popup__category caption-sm">Joined</div>
+              <a href="./chat.html">
+              <div class="inbox__item active marginator">
+                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+                      
+                      <div class="inbox__details">
+                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
+                          <div>
+                            <div class="inbox__author caption">Joel Becker</div>
+                          <div class="inbox__time caption">12h <span>ago</span></div>
+                          </div>
+                          <button class="actions__btn"><svg class="icon icon-star">
+                              <use xlink:href="img/sprite.svg#icon-star"></use>
+                            </svg></button>
+                        </div>
+                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
+                        <div class="inbox__text">"Everything project"</div>
+                        <div style="display: flex; justify-content: space-between;" class="actions">
+                          <div style="display: flex;">
+                           <h4> <span>200 </span> joined</h4>
+                            <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
+                              <use xlink:href="img/sprite.svg#icon-comment"></use>
+                            </svg></button>
+                            </div>
+                            <button  href="#report__room" data-effect="mfp-zoom-in" class=" actions__btn js-popup-open"><svg class="icon icon-more">
+                              <use xlink:href="img/sprite.svg#icon-more"></use>
+                            </svg>
+                            </button>
+                            </div>
+                      </div>
+                    </div>
+                    </a> 
+              <!--End of that side -->
+              </div>
+          </div>
         </div><button class="popup__btn btn btn_black" type="submit">Update Profile</button>
       </form>
+    </div>
+    
+    <div class="popup mfp-hide" id="edit__room">
+      <form class="popup__form">
+        <div class="popup__title h6">Edit Room</div>
+      
+        <div class="popup__fieldset">
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="field__label ">Room name</div>
+              <div ><input class="field__input" type="text" placeholder="#Computer engineers"></div>
+            </div>        
+          </div>
+
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="field__label">Topic</div>
+              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
+            </div>        
+          </div>
+          <div class="popup__field field">
+            <div class="field__label">Description</div>
+            <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
+          </div>
+        </div>
+        
+        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Submit</button>
+       
+        
+      </form>
+
+    </div>
+
+    <div class="popup mfp-hide" id="report__room">
+      <form class="popup__form">
+        <div class="popup__title h6">Report Room</div>
+      
+        <div class="popup__fieldset">
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="field__label ">Room name</div>
+              <div ><input  class="field__input" type="text" placeholder="#Computer engineers"></div>
+            </div>        
+          </div>
+
+          <div>
+            <div style="margin-bottom: 1.5rem;">
+              <div class="field__label">Room host</div>
+              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
+            </div>        
+          </div>
+          <div class="popup__field field">
+            <div class="field__label">Report</div>
+            <div class="field__wrap"><textarea placeholder="I would like to report the whole room/a member..." class="field__textarea"></textarea></div>
+          </div>
+        </div>
+        
+        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Submit</button>
+       
+        
+      </form>
+
     </div>
     
     
