@@ -344,6 +344,57 @@ let API_KEY = "";
     }
     }
 
+    //code for profile section
+    const selectElement = document.getElementById('profile__select');
+
+    // Add change event listener to the select element
+    function handleSelectionChange() {
+        var selectElement = document.getElementById("profile__select");
+        var selectedOption = selectElement.value;
+        
+        if (selectedOption === 'link1') {
+             link1ed();
+        } else if (selectedOption === 'link2') {
+             link2ed();
+        } else if (selectedOption === 'link3') {
+             link3ed();
+        }
+      }
 
 
+ function link2ed(){
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+    const section3 = document.getElementById('section3');
+    const section4 = document.getElementById('avatar');
+    section2.style.display='contents';
+    section1.style.display='none';
+    section3.style.display='none';
+    section4.style.display='none';
+
+}
+
+function link1ed(){
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+    const section3 = document.getElementById('section3');
+    const section4 = document.getElementById('avatar');
+    section2.style.display='none';
+    section1.style.display='contents';
+    section3.style.display='none';
+    section4.style.display='contents';
+
+} 
+
+function link3ed(){
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+    const section3 = document.getElementById('section3');
+    const section4 = document.getElementById('avatar');
+    section2.style.display='none';
+    section1.style.display='none';
+    section3.style.display='contents';
+    section4.style.display='none';
+
+} 
    

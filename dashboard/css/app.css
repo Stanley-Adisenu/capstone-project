@@ -7262,10 +7262,11 @@ body.dark .field__input, body.dark .field__textarea {
 }
 
 .popup__select {
-  min-width: 100%;
+  width: 80vw;
+  margin-right: 2rem;
   height: 56px;
   margin-bottom: 32px;
-  padding: 0 40px 0 24px;
+  padding: 20px 40px 20px 24px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -7823,6 +7824,10 @@ body.dark .mfp-bg {
 }
 
 @media only screen and (max-width: 1339px) {
+  .popup__select{
+   display: flex;
+   flex-direction: column;
+  }
   .page__center {
     width: 100%;
     max-width: 930px;
@@ -9856,3 +9861,12 @@ position: relative;
   fill:#8e7699;
   font-size: 1.8rem;
   }
+#section2{
+  display: none;
+}
+#section3{
+  display: none;
+}
+
+
+

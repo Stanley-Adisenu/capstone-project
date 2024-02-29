@@ -253,47 +253,26 @@ if (localStorage.getItem('darkMode') === "on") {
               <div class="sorting">
                 <div class="sorting__row">
                   <div class="sorting__col">
-                    <div class="sorting__dropdowns">
-                      <div class="dropdown js-dropdown">
-                        <div class="dropdown__head js-dropdown-head">Department</div>
-                        <div class="dropdown__body js-dropdown-body"><a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">CPEN </div>
-                            <div class="dropdown__info caption">Computer eng.</div>
-                          </a><a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">BMEN</div>
-                            <div class="dropdown__info caption">Bio. med eng</div>
-                          </a>
-                          <a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">MTEN</div>
-                            <div class="dropdown__info caption">Material sci. eng.</div>
-                          </a>
-                          <a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">FPEN</div>
-                            <div class="dropdown__info caption">Food proc. eng.</div>
-                          </a>
-                          <a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">AREN</div>
-                            <div class="dropdown__info caption">Agric eng.</div>
-                          </a>
-                          </div>
-                      </div>
-                      <div class="dropdown js-dropdown ">
-                        <div class="dropdown__head js-dropdown-head">Level</div>
-                        <div class="dropdown__body js-dropdown-body"><a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">100</div>
-                          </a><a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">200</div>
-                          </a><a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">300 </div>
-                          </a>
-                          <a class="dropdown__item" href="#">
-                            <div class="dropdown__title title">400</div>
-                          </a>
-                          </div>
-                      </div>
+                    <div class="sorting__dropdowns">                     
+                      <select class="popup__select">
+                          <option value="">Department </option> 
+                          <option value="">CPEN</option>
+                          <option value="">BMEN</option>
+                          <option value="">MTEN</option>
+                          <option value="">AREN</option>
+                          <option value="">FPEN</option>
+                      </select>
+                      <select class="popup__select">
+                          <option value="">Level</option> 
+                          <option value="">100</option>
+                          <option value="">200</option>
+                          <option value="">300</option>
+                          <option value="">400</option>
+
+                      </select>
 
                       <div class="sorting__line">
-                      <div style="width: 8rem !important;" class="sorting__search"><button class="sorting__open"><svg class="icon icon-search">
+                      <div style="width: 8rem !important; margin-top: -1.4rem;" class="sorting__search"><button class="sorting__open"><svg class="icon icon-search">
                             <use xlink:href="img/sprite.svg#icon-search"></use>
                           </svg></button><input class="sorting__input" type="button"></div>
                   
