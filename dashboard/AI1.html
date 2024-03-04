@@ -50,7 +50,7 @@ if (localStorage.getItem('darkMode') === "on") {
 }
 </script>
     <div class="page">
-        <div class="sidebar">
+      <div class="sidebar">
         <div class="sidebar__top">
           <button class="sidebar__close">
             <svg class="icon icon-close">
@@ -89,13 +89,13 @@ if (localStorage.getItem('darkMode') === "on") {
                       </svg></div>
                     <div class="sidebar__text">Quiz</div>
                   </a>                  
-                  <a class="sidebar__item" href="#">                    
+                  <a class="sidebar__item " href="leaderboard.html">                    
                     <div class="sidebar__icon"><svg class="icon icon-bag">
                       <use xlink:href="img/sprite.svg#icon-chart"></use>
                     </svg></div>
                   <div class="sidebar__text">Leaderboard</div>                  
                 </a>                  
-                  <a class="sidebar__item" href="#">
+                  <a class="sidebar__item" href="resources.html">
                     <div class="sidebar__icon"><svg class="icon icon-chart">
                         <use xlink:href="img/sprite.svg#icon-folder"></use>
                       </svg></div>
@@ -105,7 +105,7 @@ if (localStorage.getItem('darkMode') === "on") {
               </div>
               <div class="sidebar__group">
                 <div class="sidebar__menu">                 
-                  <a class="sidebar__item" href="#">
+                  <a class="sidebar__item" href="progress.html">
                     <div class="sidebar__icon"><svg class="icon icon-notification">
                         <use xlink:href="img/sprite.svg#icon-discovery"></use>
                       </svg></div>
@@ -117,17 +117,20 @@ if (localStorage.getItem('darkMode') === "on") {
                         <use xlink:href="img/sprite.svg#icon-profile"></use>
                       </svg></div>
                     <div class="sidebar__text">Profile </div>
-                  </a>                               
+                  </a>  
+              
+                  
+                  <div style="margin-top: 2rem; margin-left: 1rem;" ><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-moon">
+                  <use xlink:href="img/sprite.svg#icon-moon"></use>
+                </svg><svg class="icon icon-sun">
+                  <use xlink:href="img/sprite.svg#icon-sun"></use>
+                </svg></span></span></label></div>
                  </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="sidebar__bottom"><label class="switch switch_theme js-switch-theme"><input class="switch__input" type="checkbox" /><span class="switch__in"><span class="switch__box"></span><span class="switch__icon"><svg class="icon icon-moon">
-                  <use xlink:href="img/sprite.svg#icon-moon"></use>
-                </svg><svg class="icon icon-sun">
-                  <use xlink:href="img/sprite.svg#icon-sun"></use>
-                </svg></span></span></label></div>
+        
       </div>
 <!--End of sidebar-->
 

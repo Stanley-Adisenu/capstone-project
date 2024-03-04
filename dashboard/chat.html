@@ -50,7 +50,7 @@ if (localStorage.getItem('darkMode') === "on") {
 }
 </script>
     <div class="page">
-        <div class="sidebar">
+      <div class="sidebar">
         <div class="sidebar__top">
           <button class="sidebar__close">
             <svg class="icon icon-close">
@@ -77,27 +77,25 @@ if (localStorage.getItem('darkMode') === "on") {
                       </div>
                     <div class="sidebar__text">AI assitant</div>
                   </a>
-                  <a  class="sidebar__item active" href="community.html">
+                  <a class="sidebar__item active" href="community.html">
                   <div class="sidebar__icon">
-                    <img  class="icon icon-discovery" src="./img/comment-add.svg" alt="">
+                    <img class="icon icon-discovery" src="./img/comment-add.svg" alt="">
                    </div>
                   <div class="sidebar__text">Community</div>
                   </a>                  
                   <a class="sidebar__item" href="quiz.html">
-                    <div class="sidebar__icon">
-                      <svg class="icon icon-chart">
+                    <div class="sidebar__icon"><svg class="icon icon-chart">
                         <use xlink:href="img/sprite.svg#icon-document"></use>
-                      </svg>
-                      </div>
+                      </svg></div>
                     <div class="sidebar__text">Quiz</div>
                   </a>                  
-                  <a class="sidebar__item" href="#">                    
+                  <a class="sidebar__item " href="leaderboard.html">                    
                     <div class="sidebar__icon"><svg class="icon icon-bag">
                       <use xlink:href="img/sprite.svg#icon-chart"></use>
                     </svg></div>
                   <div class="sidebar__text">Leaderboard</div>                  
                 </a>                  
-                  <a class="sidebar__item" href="#">
+                  <a class="sidebar__item" href="resources.html">
                     <div class="sidebar__icon"><svg class="icon icon-chart">
                         <use xlink:href="img/sprite.svg#icon-folder"></use>
                       </svg></div>
@@ -107,7 +105,7 @@ if (localStorage.getItem('darkMode') === "on") {
               </div>
               <div class="sidebar__group">
                 <div class="sidebar__menu">                 
-                  <a class="sidebar__item" href="#">
+                  <a class="sidebar__item" href="progress.html">
                     <div class="sidebar__icon"><svg class="icon icon-notification">
                         <use xlink:href="img/sprite.svg#icon-discovery"></use>
                       </svg></div>
@@ -132,7 +130,7 @@ if (localStorage.getItem('darkMode') === "on") {
             </div>
           </div>
         </div>
-       
+        
       </div>
 <!--End of sidebar-->
 
@@ -275,7 +273,7 @@ if (localStorage.getItem('darkMode') === "on") {
                   <div class="widget__title mr-auto">Roomies</div>
                   <div class="quality quality_big">
                     <div class="quality__list">
-                        <a class="quality__item" href="#">
+                        <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
                         <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
                         <div class="quality__details">
                           <div class="quality__category title">Benard Asokre<svg class="icon icon-arrow-right">
@@ -284,7 +282,7 @@ if (localStorage.getItem('darkMode') === "on") {
                           <div class="quality__info caption-sm">Bass</div>
                         </div>
                       </a>
-                      <a class="quality__item" href="#">
+                      <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
                         <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-2.png" alt=""></div>
                         <div class="quality__details">
                           <div class="quality__category title">Broni Waku<svg class="icon icon-arrow-right">
@@ -541,6 +539,56 @@ if (localStorage.getItem('darkMode') === "on") {
         
       </form>
 
+    </div>
+
+    <div class="popup mfp-hide" id="popup-user">
+      <form class="popup__form">
+        <div class="popup__title h6">User profile</div>
+        <div  class="popup__tags">
+          <a id="link1" class=" popup__tag active" href="#">Profile</a>
+          </div>
+        <select id="profile__select" class="popup__select mobile-show">
+         <option value="link1">Profile</option> 
+        </select>
+        <div id="avatar" class="popup__user">
+          <div class="popup__title h6 mobile-show"> Profile</div>
+          <div class="popup__category caption-sm"> Avatar</div>
+          <div class="popup__line">
+            <div class="popup__ava"><img class="popup__pic" src="img/ava.png" alt=""></div>
+          </div>
+        </div>
+        <div class="popup__fieldset">
+          <div id="section1">
+            <div class="popup__row">
+            <div class="popup__field field">
+              <div class="field__label">Name</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+            <div class="popup__field field">
+              <div class="field__label">Username</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+          </div>
+          <div class="popup__row">
+            <div class="popup__field field">
+              <div class="field__label">Department</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+            <div class="popup__field field">
+              <div class="field__label">Email</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+          </div>
+          <div class="popup__field field">
+            <div class="field__label">Bio</div>
+            <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
+          </div>
+            </div>
+          
+
+         
+        </div>
+      </form>
     </div>
     
     <!-- scripts-->

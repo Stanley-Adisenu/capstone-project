@@ -3195,9 +3195,10 @@ body.dark .notifications.active .notifications__open {
 
 .banner__container {
   position: relative;
-  padding: 64px 64px 76px;
+  margin-top: -1rem;
+  padding-top: 9.5rem;
   border-radius: 24px;
-  background: #6C5DD3;
+  background: #b5a9e211;
   overflow: hidden;
 }
 
@@ -3573,15 +3574,16 @@ body.dark .dropdown.active .dropdown__head {
 
 .products__row {
   display: table-row;
+  font-size: 1.1rem;
 }
 
 .products__row_head .products__cell {
   padding-top: 24px;
-  padding-bottom: 24px;
-  font-size: 13px;
+  padding-bottom: 15px;
+  font-size: 1.1rem;
   line-height: 1.38462;
   font-weight: 500;
-  color: #B2B3BD;
+  color: #5f5f63;
 }
 
 .products__cell {
@@ -3596,7 +3598,7 @@ body.dark .dropdown.active .dropdown__head {
 .products__cell:first-child {
   width: 20px;
   padding: 0;
-  font-size: 0;
+  font-size: 1rem;
 }
 
 .products__item {
@@ -3625,7 +3627,7 @@ body.dark .dropdown.active .dropdown__head {
   width: 96px;
   height: 72px;
   border-radius: 8px;
-  background: #A0D7E7;
+  background: transparent;
   font-size: 0;
 }
 
@@ -3637,7 +3639,7 @@ body.dark .dropdown.active .dropdown__head {
   right: 7px;
   height: 8px;
   border-radius: 0 0 8px 8px;
-  background: #E7FAFF;
+  background: transparent;
 }
 
 .products__pic {
@@ -3806,7 +3808,8 @@ body.dark .dropdown.active .dropdown__head {
 }
 
 .products_main .products__cell:nth-child(2) {
-  font-size: 0;
+  font-size: 1rem;
+  margin-left: 1rem;
 }
 
 .products_main .products__col:first-child {
@@ -7730,6 +7733,11 @@ body.dark .mfp-bg {
 }
 
 @media only screen and (max-width: 1339px) and (max-width: 767px) {
+
+
+  .banner__container {
+    padding-top: 2rem;
+   }
   .widget_responsive:before {
     -webkit-filter: blur(46.985px);
     filter: blur(46.985px);
@@ -7754,6 +7762,9 @@ body.dark .mfp-bg {
   /**
        * Remove all paddings around the image on small screen
        */
+       .banner__container {
+        padding-top: 2rem;
+       }
   .mfp-img-mobile .mfp-image-holder {
     padding-left: 0;
     padding-right: 0;
@@ -7800,6 +7811,7 @@ body.dark .mfp-bg {
 }
 
 @media only screen and (max-width: 1419px) {
+ 
   .page__col {
     padding: 0 48px 44px;
   }
@@ -7824,6 +7836,14 @@ body.dark .mfp-bg {
 }
 
 @media only screen and (max-width: 1339px) {
+
+
+  .banner__container {
+    padding-top: 2rem;
+   }
+  .top__three{
+    margin-top: 8rem;
+  }
   .popup__select{
    display: flex;
    flex-direction: column;
@@ -7984,9 +8004,7 @@ body.dark .mfp-bg {
     flex-grow: 1;
     margin-right: 50px;
   }
-  .banner__container {
-    padding: 50px 56px;
-  }
+ 
   .banner__preview {
     right: 50px;
     width: 330px;
@@ -8606,9 +8624,7 @@ body.dark .mfp-bg {
   body.dark .sidebar.active .sidebar__burger {
     border-color: transparent;
   }
-  .banner__container {
-    padding: 50px 40px;
-  }
+  
   .products__preview {
     display: none;
   }
@@ -9011,8 +9027,7 @@ body.dark .mfp-bg {
     box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
   }
   .banner__container {
-    padding: 10px 32px 32px;
-    text-align: center;
+   padding-top: 2rem;
   }
   .banner__wrap {
     max-width: 100%;
@@ -9867,6 +9882,71 @@ position: relative;
 #section3{
   display: none;
 }
+.top__three{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+.top__three .first img{
+  position: relative;
+  top: -6rem;
+  border: 6px solid  #FFD700;
+  z-index: 1;
+  transition: 1s ease-in-out;
+}
+.top__three .second img{
+  position: relative;
+  border: 6px solid #C0c0c0;
+}
+.top__three .third img{
+  position: relative;
+  border: 6px solid #B5A642;
+}
+.crown{
+  border-color: transparent;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: absolute;
+  bottom: 18.94rem;
+  margin-right: 5rem;
+  transform: rotate(-27deg);
+  z-index: 2;
+}
+
+ .gold_medal{
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: 10.7rem;
+  margin-left: 2rem;
+ 
+}
+.silver_medal,.bronze_medal{
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  bottom: 2.7rem;
+  margin-left: 2rem;
+ 
+}
+
+.portrait{
+  display: flex;
+  flex-direction: column;
+}
+
+.first__person{
+ position: relative;
+ bottom: 5.6rem;
+
+}
+.second__person,.third__person{
+  position: absolute;
+  bottom: 2.2rem;
+}
+
+
+
 
 
 
