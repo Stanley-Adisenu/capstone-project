@@ -101,13 +101,13 @@ Apex.chart = {
 // chart affiliate impressions
 (function () {
   var options = {
-    labels: ['Graphics', 'Theme', 'Template'],
+    labels: ['CPEN', 'BMEN', 'AREN','MTEN','FPEN'],
     series: [{
-      name: '',
-      data: [95, 66, 44]
+      name: 'Attemted quizzes',
+      data: [95, 66, 44,55,32]
     }, {
-      name: '',
-      data: [72, 48, 38]
+      name: 'Average score',
+      data: [72, 48, 38,77,33]
     }],
     colors: [purple, blue],
     chart: {
@@ -247,13 +247,13 @@ Apex.chart = {
 // chart users counter
 (function () {
   var options = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'Jul'],
+    labels: ['Lvl 100', 'Lvl 200', 'Lvl 300', 'Lvl 400'],
     series: [{
-      name: 'New users',
-      data: [400, 380, 240, 280, 390, 330, 175]
+      name: 'Average Score',
+      data: [10, 9, 3, 7]
     }, {
-      name: 'Users',
-      data: [100, 0, 0, 0, 60, 0, 20]
+      name: 'Attempted Quizzes',
+      data: [1, 0, 0, 0]
     }],
     colors: [white, borderColor],
     chart: {
@@ -261,7 +261,7 @@ Apex.chart = {
       type: 'bar',
       stacked: true,
       toolbar: {
-        show: false
+      show: false
       }
     },
     grid: {
@@ -274,7 +274,7 @@ Apex.chart = {
       },
       yaxis: {
         lines: {
-          show: false
+          show: true
         }
       },
       padding: {
@@ -316,7 +316,7 @@ Apex.chart = {
         show: false
       },
       tooltip: {
-        enabled: false
+        enabled: true
       }
     },
     yaxis: {
@@ -578,7 +578,7 @@ Apex.chart = {
 // chart circle purple
 (function () {
   var options = {
-    series: [40],
+    series: [50],
     chart: {
       height: '100%',
       type: 'radialBar'

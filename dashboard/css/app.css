@@ -1386,11 +1386,11 @@ body.dark .page__content_pt64 {
 }
 
 .sidebar__item:hover {
-  color: #e25f07;
+  color: #6C5DD3;
 }
 
 .sidebar__item.active {
-  background: #FF6E30;
+  background: #6C5DD3;
   color: #ffffff;
 }
 
@@ -1906,7 +1906,7 @@ body.dark .switch_theme .switch__input + .switch__in .icon-sun {
 
 .slider__container {
   position: relative;
-  background: #e96730;
+  background: #6C5DD3;
   border-radius: 24px;
 }
 
@@ -2251,7 +2251,7 @@ body.dark .btn_gray:hover {
   right: -12px;
   bottom: -12px;
   border-radius: 16px;
-  background: #FF6E30;
+  background: #6C5DD3;
   opacity: 0;
   -webkit-transition: opacity .25s;
   -o-transition: opacity .25s;

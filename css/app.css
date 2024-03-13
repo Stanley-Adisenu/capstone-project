@@ -6144,7 +6144,7 @@ body.dark .field__input, body.dark .field__textarea {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    margin-bottom: auto;
+    margin-bottom: 11rem;
   }
   .header__link {
     font-family: 'Poppins', sans-serif;
@@ -6912,7 +6912,7 @@ body.dark .field__input, body.dark .field__textarea {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    margin: -16px 0 auto -24px;
+    margin: 20px 0 50vh -24px;
   }
   .header__link {
     margin: 16px 0 0 24px;
@@ -7837,7 +7837,7 @@ body.dark .field__input, body.dark .field__textarea {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin: 0 0 auto;
+    margin: 2rem 0rem 5rem 0rem;
   }
   .header__link {
     margin: 0;

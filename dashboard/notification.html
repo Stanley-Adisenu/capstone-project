@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
-  
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Overview</title>
+    <title>Notifications</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -15,18 +14,18 @@
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Your academic ecosystem">
+    <meta name="description" content="Ultimate Multipurpose HTML Dashboard Kit">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@ui8">
     <meta name="twitter:title" content="Unity">
-    <meta name="twitter:description" content="Your academic ecosystem">
+    <meta name="twitter:description" content="Ultimate Multipurpose HTML Dashboard Kit">
     <meta name="twitter:creator" content="@ui8">
     <meta name="twitter:image" content="img/twitter-card.jpg">
     <meta property="og:title" content="Unity">
     <meta property="og:type" content="Article">
     <meta property="og:url" content="index.html">
     <meta property="og:image" content="img/fb-og-image.jpg">
-    <meta property="og:description" content="Your academic ecosystem">
+    <meta property="og:description" content="Ultimate Multipurpose HTML Dashboard Kit">
     <meta property="og:site_name" content="Unity">
     <meta property="fb:admins" content="132951670226590">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
@@ -50,7 +49,7 @@ if (localStorage.getItem('darkMode') === "on") {
 		});
 }
 </script>
-    <div class="page">
+    <div class="page page_other">
       <div class="sidebar">
         <div class="sidebar__top">
           <button class="sidebar__close">
@@ -134,11 +133,7 @@ if (localStorage.getItem('darkMode') === "on") {
         
       </div>
 <!--End of sidebar-->
-
-
-
-
-<div class="page__wrapper">
+      <div class="page__wrapper">
         <div class="page__center">
           <div class="page__row page__row_head page__row_responsive page__row_border">
             <div class="page__col">
@@ -403,26 +398,18 @@ if (localStorage.getItem('darkMode') === "on") {
           </div>
         </div>
       </div>
-        </div>
-      </div>
     </div>
-
-  
-
     <div class="popup mfp-hide" id="popup-settings">
       <form class="popup__form">
         <div class="popup__title h6">Account Settings</div>
-        <div  class="popup__tags">
-          <a onclick="link1ed()" id="link1" class=" popup__tag active" href="#">Profile</a>
-          <a onclick="link2ed()" id="link2"  class=" popup__tag" href="#">Password</a>
-          <a onclick="link3ed()" id="link3"  class=" popup__tag" href="#">Rooms</a>
-          </div>
-        <select onchange="handleSelectionChange()" id="profile__select" class="popup__select mobile-show">
-         <option value="link1">Profile</option> 
-          <option value="link2">Password</option>
-          <option value="link3">Rooms</option>
+        <div class="popup__tags"><a class="popup__tag active" href="#">Profile</a><a class="popup__tag" href="#">Password</a><a class="popup__tag" href="#">Email</a><a class="popup__tag" href="#">Notification</a><a class="popup__tag" href="#">Settings</a></div><select class="popup__select mobile-show">
+          <option>Profile</option>
+          <option>Password</option>
+          <option>Email</option>
+          <option>Notification</option>
+          <option>Settings</option>
         </select>
-        <div id="avatar" class="popup__user">
+        <div class="popup__user">
           <div class="popup__title h6 mobile-show">Your Profile</div>
           <div class="popup__category caption-sm">Your Avatar</div>
           <div class="popup__line">
@@ -436,24 +423,33 @@ if (localStorage.getItem('darkMode') === "on") {
           </div>
         </div>
         <div class="popup__fieldset">
-          <div id="section1">
-            <div class="popup__row">
+          <div class="popup__row">
             <div class="popup__field field">
               <div class="field__label">Your Full Name</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
             <div class="popup__field field">
-              <div class="field__label">Username</div>
+              <div class="field__label">Display Name</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
           </div>
           <div class="popup__row">
             <div class="popup__field field">
-              <div class="field__label">Department</div>
+              <div class="field__label">Role</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
             <div class="popup__field field">
-              <div class="field__label">Email</div>
+              <div class="field__label">Location</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+          </div>
+          <div class="popup__row">
+            <div class="popup__field field">
+              <div class="field__label">Role</div>
+              <div class="field__wrap"><input class="field__input" type="text"></div>
+            </div>
+            <div class="popup__field field">
+              <div class="field__label">Team</div>
               <div class="field__wrap"><input class="field__input" type="text"></div>
             </div>
           </div>
@@ -461,156 +457,9 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="field__label">Bio</div>
             <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
           </div>
-            </div>
-          
-
-          <div id="section2">
-            <div class="popup__field field ">
-              <div class="field__label">Old Password</div>
-              <div class="field__wrap"><input type="password" class="field__input" ></div>
-            </div>
-            <div>
-              <div  style="margin-top: 1rem;" class="popup__field field ">
-                <div class="field__label">New Password</div>
-                <div class="field__wrap"><input type="password" class="field__input" ></div>
-              </div>
-              <div  style="margin-top: 1rem;" class="popup__field field">
-                <div class="field__label">Confirm New Password</div>
-                <div class="field__wrap"><input type="password" class="field__input" ></div>
-              </div>
-            </div>
-          </div>
-
-          <div id="section3">
-            <div class="created__room">
-              <div class="popup__category caption-sm">Created</div>
-              <!--Begining of that side-->
-               <a href="./chat.html">
-                <div class="inbox__item active marginator">                        
-                        <div class="inbox__details">
-                        
-                          <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                          <div class="inbox__text">"Everything project"</div>
-                          <div style="display: flex; justify-content: space-between;" class="actions">
-                            <div style="display: flex;">
-                             <h4> <span>200 </span> joined</h4>
-                              <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
-                                <use xlink:href="img/sprite.svg#icon-comment"></use>
-                              </svg></button>
-                              </div>
-                              <button  href="#edit__room" data-effect="mfp-zoom-in" class=" actions__btn js-popup-open"><svg class="icon icon-more">
-                              <use xlink:href="img/sprite.svg#icon-more"></use>
-                            </svg>
-                            </button>
-                              </div>
-                        </div>
-                      </div>
-                      </a> 
-                <!--End of that side -->
-            </div>
-            
-            <div class="joined__room">
-              <div class="popup__category caption-sm">Joined</div>
-              <a href="./chat.html">
-              <div class="inbox__item active marginator">
-                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                      
-                      <div class="inbox__details">
-                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
-                          <div>
-                            <div class="inbox__author caption">Joel Becker</div>
-                          <div class="inbox__time caption">12h <span>ago</span></div>
-                          </div>
-                          <button class="actions__btn"><svg class="icon icon-star">
-                              <use xlink:href="img/sprite.svg#icon-star"></use>
-                            </svg></button>
-                        </div>
-                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                        <div class="inbox__text">"Everything project"</div>
-                        <div style="display: flex; justify-content: space-between;" class="actions">
-                          <div style="display: flex;">
-                           <h4> <span>200 </span> joined</h4>
-                            <button style="margin-left: 0.6rem;" class="actions__btn"> <svg class="icon icon-comment">
-                              <use xlink:href="img/sprite.svg#icon-comment"></use>
-                            </svg></button>
-                            </div>
-                            <button  href="#report__room" data-effect="mfp-zoom-in" class=" actions__btn js-popup-open"><svg class="icon icon-more">
-                              <use xlink:href="img/sprite.svg#icon-more"></use>
-                            </svg>
-                            </button>
-                            </div>
-                      </div>
-                    </div>
-                    </a> 
-              <!--End of that side -->
-              </div>
-          </div>
         </div><button class="popup__btn btn btn_black" type="submit">Update Profile</button>
       </form>
-    </div>
-    
-    <div class="popup mfp-hide" id="edit__room">
-      <form class="popup__form">
-        <div class="popup__title h6">Edit Room</div>
-      
-        <div class="popup__fieldset">
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label ">Room name</div>
-              <div ><input class="field__input" type="text" placeholder="#Computer engineers"></div>
-            </div>        
-          </div>
-
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label">Topic</div>
-              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
-            </div>        
-          </div>
-          <div class="popup__field field">
-            <div class="field__label">Description</div>
-            <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
-          </div>
-        </div>
-        
-        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Submit</button>
-       
-        
-      </form>
-
-    </div>
-
-    <div class="popup mfp-hide" id="report__room">
-      <form class="popup__form">
-        <div class="popup__title h6">Report Room</div>
-      
-        <div class="popup__fieldset">
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label ">Room name</div>
-              <div ><input  class="field__input" type="text" placeholder="#Computer engineers"></div>
-            </div>        
-          </div>
-
-          <div>
-            <div style="margin-bottom: 1.5rem;">
-              <div class="field__label">Room host</div>
-              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
-            </div>        
-          </div>
-          <div class="popup__field field">
-            <div class="field__label">Report</div>
-            <div class="field__wrap"><textarea placeholder="I would like to report the whole room/a member..." class="field__textarea"></textarea></div>
-          </div>
-        </div>
-        
-        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Submit</button>
-       
-        
-      </form>
-
-    </div>
-    <!-- scripts-->
+    </div><!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/owl.carousel.min.js"></script>
     <script src="js/lib/svg4everybody.min.js"></script>
