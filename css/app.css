@@ -2690,15 +2690,16 @@ body.dark .header__burger:before, body.dark .header__burger:after {
   text-align: center;
   font-size: 1.6rem;
   color: #6E757C;
+  position: relative;
 }
 
 .main__list {
   display: -webkit-box;
   display: -ms-flexbox;
+  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 -16px;
+  justify-content: space-around;
+  margin-left: 25vw;
 }
 
 .main__logo {
@@ -2709,6 +2710,7 @@ body.dark .header__burger:before, body.dark .header__burger:after {
 }
 
 .main__logo img {
+  max-height: 35vh;
   max-width: 40%;
  
 }
@@ -5902,8 +5904,8 @@ body.dark .questions__item.active .questions__head {
 }
 
 body.dark .field__input, body.dark .field__textarea {
-  background: #283036;
-  color: #ffffff;
+  background: #ffffff;
+  color: #283036;
 }
 
 .d1,
@@ -6620,6 +6622,7 @@ body.dark .field__input, body.dark .field__textarea {
   .main__logo {
     margin: 0 8px;
   }
+
   .main:not(:last-child) {
     margin-bottom: 112px;
   }

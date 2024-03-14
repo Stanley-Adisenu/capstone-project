@@ -26,6 +26,8 @@ input[type="email"],
 input[type="tel"],
 textarea {
   -webkit-appearance: none;
+
+  border: 2px solid #242731;
 }
 
 input[type="submit"],
@@ -5855,6 +5857,7 @@ body.dark .payment__in {
   background: transparent;
   color: #808191;
   cursor: pointer;
+  position: relative;
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
@@ -5904,6 +5907,7 @@ body.dark .payment__in {
 
 .inbox__time {
   margin-left: 10px;
+  color: white;
 }
 
 .inbox__item .inbox__title {
@@ -6251,7 +6255,8 @@ body.dark .files__title {
 
 .editor__wrap {
   background: #fafafa;
-  border-radius: 12px;
+  border-radius: 12px ;
+  border: 2px solid #242731;
   opacity: 1;
 }
 
@@ -7178,17 +7183,17 @@ body.dark .activity__item.active .activity__author {
 
 .field__label {
   margin-bottom: 16px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.33333;
   font-weight: 500;
-  color: #B2B3BD;
+  color: #242731;
 }
 
 .field__input, .field__textarea {
   width: 100%;
   border-radius: 8px;
   background: rgba(228, 228, 228, 0.3);
-  border: 2px solid transparent;
+  border: 2px solid #242731;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -7727,7 +7732,8 @@ body.dark .mfp-bg {
 }
 
 .caption-sm {
-  font-size: 12px;
+  font-size: 15px;
+  color: #242731;
   font-weight: 500;
   line-height: 1.33333;
 }
@@ -9359,6 +9365,7 @@ body.dark .mfp-bg {
   }
   .inbox__text {
     margin-left: -64px;
+    color: white;
   }
   .inbox__item:hover {
     background: none;
@@ -9371,13 +9378,13 @@ body.dark .mfp-bg {
     border-color: #E4E4E4;
   }
   .inbox__item.active .actions__btn .icon {
-    fill: #1B1D21;
+    fill: white;
   }
   .inbox__item.active .inbox__title {
-    color: #11142D;
+    color: white;
   }
   .inbox__item.active .inbox__author {
-    color: #808191;
+    color: white;
   }
   .inbox .actions {
     margin-left: -64px;
@@ -9407,14 +9414,17 @@ body.dark .mfp-bg {
   body.dark .inbox__item:hover {
     background: none;
   }
-  body.dark .inbox__item.active {
-    background: none;
+   .inbox__item.active {
+    background: #6C5DD3;
+    border-radius: 12px;
+    margin: 2rem 1rem 2rem 1rem;
+    padding: 2rem;
   }
   body.dark .inbox__author {
     color: #ffffff;
   }
   body.dark .inbox__item.active .actions__btn {
-    border-color: rgba(228, 228, 228, 0.1);
+    border-color: white;
   }
   body.dark .inbox__item.active .actions__btn .icon {
     fill: #ffffff;
@@ -9811,6 +9821,8 @@ font-size: 1.8rem;
 width: 70vw;
 padding: 1rem  1rem;
 position: relative;
+border:2px solid #242731;
+border-radius: 1rem;
 }
 
 #welcome{
@@ -9828,7 +9840,7 @@ position: relative;
   scrollbar-color: transparent transparent;
 }
 
-.inbox__box p{
+.inbox__box p, .inbox__text p{
   white-space: pre-wrap;
  }
 
@@ -9945,6 +9957,27 @@ position: relative;
   bottom: 2.2rem;
 }
 
+.name__time{
+  display: flex;
+}
+.joined__number{
+  color:white;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  left: 5.5rem;
+}
+button .icon-comment{
+  display: none;
+}
+
+.actions__btn {
+  border: none ;
+}
+
+.created__room .title{
+  padding-left: 3rem;
+}
 
 
 
