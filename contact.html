@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- Mirrored from ui8-solo-saas.herokuapp.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Nov 2023 00:59:38 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8">
     <title>Contact</title>
@@ -55,15 +52,26 @@ if (localStorage.getItem('darkMode') === "on") {
 </script>
     <div class="page">
       <header class="header">
-        <div class="header__center center"><a class="header__logo" href="index.html"><img class="header__pic header__pic_dark" src="img/logo-dark.png" alt="" /><img class="header__pic header__pic_light" src="img/logo-light.png" alt="" /></a>
+        <div class="header__center center">
+          <a class="header__logo" href="index.html">
+            <img class="header__pic header__pic_dark" src="img/logo.png" alt="" />
+            <img class="header__pic header__pic_light" src="img/logo.png" alt="" /></a>
           <div class="header__wrapper">
-            <nav class="header__nav"><a class="header__link" href="downloads.html">Downloads</a><a class="header__link" href="pricing.html">Pricing</a><a class="header__link" href="features.html">Features</a><a class="header__link" href="about-us.html">About Us</a><a class="header__link active" href="contact.html">Contact</a></nav>
-            <div class="header__btns"><a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a><a class="header__btn btn btn_orange js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a></div>
+            <nav class="header__nav">
+              <a class="header__link" href="index.html">Home</a>
+              <a class="header__link" href="about-us.html">About Us</a>
+              <a class="header__link active" href="contact.html">Contact</a>
+            </nav>
+            <div id="sign-in-out" class="header__btns">
+              <a class="header__btn btn btn_transparent js-popup-open" href="#popup-sign-in" data-effect="mfp-zoom-in">Login</a>
+              <a class="header__btn btn btn_signup js-popup-open" href="#popup-sign-up" data-effect="mfp-zoom-in">Sign up</a>
+              </div>
             <picture class="header__preview">
               <source media="(max-width: 767px)" srcset="img/header-pic-mobile@2x.png, img/header-pic-mobile@2x.png 2x" /><img srcset="img/header-pic@2x.png 2x" src="img/header-pic.png" alt="" /></picture>
           </div><button class="header__burger"></button>
         </div>
       </header>
+      <!-- End of header -->
       <div class="contact">
         <div class="contact__center center">
           <div class="contact__bg">
@@ -82,8 +90,8 @@ if (localStorage.getItem('darkMode') === "on") {
                 <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your email"></div>
               </div>
               <div class="field">
-                <div class="field__label">Tell us what you need help with:</div>
-                <div class="field__wrap"><textarea class="field__textarea" placeholder="Enter a topic, like “channel problem...”"></textarea></div>
+                <div class="field__label">Leave us a message:</div>
+                <div class="field__wrap"><textarea class="field__textarea" placeholder="Enter your message"></textarea></div>
               </div><button class="contact__btn btn btn_orange">Send now</button>
             </form>
           </div>
@@ -92,16 +100,9 @@ if (localStorage.getItem('darkMode') === "on") {
       <div class="footer">
         <div class="footer__center center">
           <div class="footer__body">
-            <div class="footer__wrap"><a class="footer__logo" href="index.html"><img class="footer__pic footer__pic_dark" src="img/logo-dark.png" alt="" /><img class="footer__pic footer__pic_light" src="img/logo-light.png" alt="" /></a>
-              <div class="footer__text">Join millions of people who organize work and life with Solo App.</div>
-            </div>
-            <div class="footer__line">
-              <div class="footer__downloads"><a class="footer__download" href="#"><img src="img/google-play.svg" alt="" /></a><a class="footer__download" href="#"><img src="img/app-store.svg" alt="" /></a></div>
-              <div class="footer__nav"><a class="footer__link" href="downloads.html">Downloads</a><a class="footer__link" href="pricing.html">Pricing</a><a class="footer__link" href="features.html">Features</a><a class="footer__link" href="about-us.html">About Us</a><a class="footer__link active" href="contact.html">Contact</a></div>
-            </div>
           </div>
           <div class="footer__bottom">
-            <div class="footer__copyright">© Solo Inc. Designed by UI8 Team</div>
+            <div class="footer__copyright">© Built by Stan and Steve</div>
             <div class="footer__social"><a class="footer__link" href="#"><svg class="icon icon-facebook">
                   <use xlink:href="img/sprite.svg#icon-facebook"></use>
                 </svg></a><a class="footer__link" href="#"><svg class="icon icon-twitter">
@@ -118,14 +119,33 @@ if (localStorage.getItem('darkMode') === "on") {
       </div>
       <div class="popup mfp-hide" id="popup-sign-up">
         <div class="popup__title h2">Sign up</div>
-        <div class="popup__variants"><a class="popup__variant" href="#"><img src="img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="img/apple.svg" alt="">Sign up via Apple</a></div>
+        <div class="popup__variants">
+          <a class="popup__variant" href="#">
+            <img src="img/google.svg" alt="">Sign up via Google</a>
+            <a class="popup__variant" href="#">
+              <img src="img/apple.svg" alt="">Sign up via Apple</a>
+              </div>
         <div class="popup__details">Or continue with email</div>
-        <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Continue</a></div>
+        <div class="field">
+            <div class="field__label">Your email</div>
+            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your email"></div>
+        </div>
+        <div class="field">
+            <div class="field__label">Password</div>
+            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your password"></div>
+        </div>
+        <div class="field">
+            <div class="field__label">Confirm password</div>
+            <div class="field__wrap"><input class="field__input" type="email" placeholder="Confrm your password"></div>
+        </div>
+        <div style="margin-top: 3rem;" class="popup__btns">
+        <a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Continue</a></div>
         <div class="popup__note">By clicking the Continue button, you agree to the terms of service and privacy policy.</div>
       </div>
+
       <div class="popup mfp-hide" id="popup-code">
         <div class="popup__title h2">Check your <br>inbox</div>
-        <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:tam@ui8.net">tam@ui8.net</a> please check your inbox and enter the code below.</div>
+        <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:stanleyadisenu@gmail.com">stan@gmail.com</a> please check your inbox and enter the code below.</div>
         <div class="popup__code">
           <div class="popup__number"><input type="tel"></div>
           <div class="popup__number"><input type="tel"></div>
@@ -136,12 +156,25 @@ if (localStorage.getItem('darkMode') === "on") {
         </div>
         <div class="popup__btns"><button class="popup__btn btn btn_orange">Enter</button><a class="popup__link" href="#">Resend digit code</a></div>
       </div>
+
+
       <div class="popup mfp-hide" id="popup-sign-in">
         <div class="popup__title h2">Sign in</div>
         <div class="popup__variants"><a class="popup__variant" href="#"><img src="img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="img/apple.svg" alt="">Sign up via Apple</a></div>
         <div class="popup__details">Or continue with email & password</div>
-        <div class="popup__btns"><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Enter your email</a><a class="popup__btn btn btn_dark js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Password</a><a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Sign In</a></div>
-        <div class="popup__note"> </div>
+        <form action="">
+          <div class="field">
+            <div class="field__label">Your email</div>
+            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your email"></div>
+        </div>
+        <div class="field">
+            <div class="field__label">Password</div>
+            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your password"></div>
+        </div>  
+        <div style="margin-top: 3rem;" class="popup__btns"><a class="popup__btn btn btn_orange "  href="./dashboard/index.html" data-effect="mfp-zoom-in">Sign In</a>
+          </div>
+        </form>
+       
       </div>
     </div><!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
@@ -151,6 +184,4 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/lib/aos.js"></script>
     <script src="js/app.js"></script>
   </body>
-
-<!-- Mirrored from ui8-solo-saas.herokuapp.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Nov 2023 00:59:38 GMT -->
 </html>

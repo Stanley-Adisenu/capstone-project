@@ -5134,6 +5134,7 @@ body.dark .pricing__view .icon {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -72px -60px 0;
 }
 
@@ -5866,18 +5867,19 @@ body.dark .questions__item.active .questions__head {
 
 .field__label {
   margin-bottom: 16px;
-  color: #6A7986;
+  color: #757a7e;
+  font-size: 18px;
 }
 
 .field__input, .field__textarea {
   width: 100%;
   border-radius: 16px;
-  background: #ffffff;
+  background:#ffffff;
   border: none;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #272E35;
+  color:   #272E35;
 }
 
 .field__input::-webkit-input-placeholder, .field__textarea::-webkit-input-placeholder {
