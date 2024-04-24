@@ -9367,7 +9367,7 @@ body.dark .mfp-bg {
     margin-left: -64px;
   }
   .inbox__text {
-    margin-left: -64px;
+    margin-left: -1rem;
     color: white;
   }
   .inbox__item:hover {
@@ -9420,7 +9420,7 @@ body.dark .mfp-bg {
    .inbox__item.active {
     background: #6C5DD3;
     border-radius: 12px;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 0.2rem 2rem 0.2rem;
     padding: 2rem;
   }
   body.dark .inbox__author {
