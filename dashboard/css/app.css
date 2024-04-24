@@ -8694,6 +8694,9 @@ body.dark .mfp-bg {
 }
 
 @media only screen and (max-width: 767px) {
+  .host__pic{
+    display: none;
+  }
   .page__wrapper {
     padding-left: 0;
   }
