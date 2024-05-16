@@ -123,3 +123,109 @@ $(document).ready(function () {
 
 // aos animation
 AOS.init();
+
+
+
+
+// sign up
+async function SignUpSubmit(){
+const username = document.getElementById('username').value;
+const email = document.getElementById('email').value;
+const pass1 = document.getElementById('pass').value;
+const pass2 = document.getElementById('confirm_pass').value;
+
+
+if (pass1 !== pass2) {
+	    alert('Passwords do not match.');
+		return;
+	        
+	}
+else if(pass1.length < 8){
+	alert('Password should be at least 8 characters');
+	username = '';
+ 	email = '';
+ 	pass1 = '';
+ 	pass2 = '';
+	return;
+}
+
+try {
+	        const response = await fetch('http://127.0.0.1:8000/auth/users/', {
+	            method: 'POST',
+	            headers: {
+	                'Content-Type': 'application/json'
+	            },
+	            body: JSON.stringify({
+	                user_name: username,
+	                email: email,
+	                password: pass1	,			
+	                re_password: pass2				
+	            })
+				
+	        });
+	
+	        if (response.ok) {
+			
+	           alert('Account created successfully. Please check your email to activate your account');
+
+	        } else {
+	            const data = await response.json();
+	            alert('Sign up failed. This may be due to an already existing username or email');
+	        }
+	    } catch (error) {
+	       alert('An error occurred.');
+	        console.error('Error:', error);
+	    }
+	}
+
+
+
+	// alert(username);
+	// alert(email);
+	// alert(pass1);
+	// alert(pass2);
+// }
+
+// scripts.js
+
+// document.getElementById('signup-form').addEventListener('submit', async function(event) {
+//     event.preventDefault();
+
+//     const username = document.getElementById('username').value;
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
+//     const confirmPassword = document.getElementById('confirm-password').value;
+//     const messageElement = document.getElementById('message');
+
+//     if (password !== confirmPassword) {
+//         messageElement.textContent = 'Passwords do not match.';
+//         return;
+//     }
+
+//     try {
+//         const response = await fetch('http://localhost:8000/auth/users/', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 username: username,
+//                 email: email,
+//                 password: password
+//             })
+//         });
+
+//         if (response.ok) {
+//             messageElement.style.color = 'green';
+//             messageElement.textContent = 'Sign up successful!';
+//         } else {
+//             const data = await response.json();
+//             messageElement.style.color = 'red';
+//             messageElement.textContent = data.detail || 'Sign up failed.';
+//         }
+//     } catch (error) {
+//         messageElement.style.color = 'red';
+//         messageElement.textContent = 'An error occurred.';
+//         console.error('Error:', error);
+//     }
+// });

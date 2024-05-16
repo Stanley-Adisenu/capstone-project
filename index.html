@@ -30,6 +30,7 @@
     <meta property="fb:admins" content="132951670226590">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
+    <script src="./js/api.js"></script>
     <link rel="stylesheet" media="all" href="css/app.css">
     <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
 if (viewportmeta) {
@@ -173,6 +174,7 @@ if (localStorage.getItem('darkMode') === "on") {
             <div id="features" class="stage">amazing features</div>
             <h2 class="advantages__title h2" data-aos="animation-scale-top" data-aos-duration="600">See what you can do in one app</h2>
           </div>
+          
 
           <div class="advantages__list">
             <div class="advantages__item">
@@ -362,6 +364,9 @@ if (localStorage.getItem('darkMode') === "on") {
               </svg></span></span></label>
       </div>
 
+      <div id="message_box" style="width: fit-content;height: fit-content;">
+
+      </div>
 
 
 
@@ -374,21 +379,31 @@ if (localStorage.getItem('darkMode') === "on") {
               <img src="img/apple.svg" alt="">Sign up via Apple</a>
               </div>
         <div class="popup__details">Or continue with email</div>
-        <div class="field">
+        <form class="signup-form">
+          <div class="field">
+            <div  class="field__label">Your username</div>
+            <div class="field__wrap">
+              <input id="username"  name="username" class="field__input" type="text" placeholder="Enter your username">
+            </div>
+        </div>
+        <div   class="field">
             <div class="field__label">Your email</div>
-            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your email"></div>
+            <div class="field__wrap"><input id="email" name="email" class="field__input" type="email" placeholder="Enter your email"></div>
         </div>
-        <div class="field">
+        <div   class="field">
             <div class="field__label">Password</div>
-            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your password"></div>
+            <div class="field__wrap"><input id="pass" name="pass" class="field__input" type="text" placeholder="Enter your password"></div>
         </div>
-        <div class="field">
+        <div  class="field">
             <div class="field__label">Confirm password</div>
-            <div class="field__wrap"><input class="field__input" type="email" placeholder="Confrm your password"></div>
+            <div class="field__wrap"><input id="confirm_pass" name="confirm_pass"  class="field__input" type="text" placeholder="Confrm your password"></div>
         </div>
-        <div style="margin-top: 3rem;" class="popup__btns">
-        <a class="popup__btn btn btn_orange js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Continue</a></div>
+        <button type="submit" onclick="SignUpSubmit()"  style="margin-top: 3rem; width: 100%;" class="popup__btns popup__btn btn btn_orange submit_button" >
+        <a  >Continue</a>
+        </button>
         <div class="popup__note">By clicking the Continue button, you agree to the terms of service and privacy policy.</div>
+        </form>
+        
       </div>
 
       <div class="popup mfp-hide" id="popup-code">
@@ -408,7 +423,7 @@ if (localStorage.getItem('darkMode') === "on") {
 
       <div class="popup mfp-hide" id="popup-sign-in">
         <div class="popup__title h2">Sign in</div>
-        <div class="popup__variants"><a class="popup__variant" href="#"><img src="img/google.svg" alt="">Sign up via Google</a><a class="popup__variant" href="#"><img src="img/apple.svg" alt="">Sign up via Apple</a></div>
+        <div class="popup__variants"><a class="popup__variant" href="#"><img src="img/google.svg" alt="">Sign in via Google</a><a class="popup__variant" href="#"><img src="img/apple.svg" alt="">Sign in via Apple</a></div>
         <div class="popup__details">Or continue with email & password</div>
         <form action="">
           <div class="field">
@@ -431,5 +446,6 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/lib/jquery.magnific-popup.min.js"></script>
     <script src="js/lib/aos.js"></script>
     <script src="js/app.js"></script>
+   
   </body>
 </html>
