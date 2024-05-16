@@ -129,7 +129,7 @@ AOS.init();
 
 // sign up
 async function SignUpSubmit(){
-const username = document.getElementById('username').value;
+var username = document.getElementById('username').value;
 const email = document.getElementById('email').value;
 const pass1 = document.getElementById('pass').value;
 const pass2 = document.getElementById('confirm_pass').value;
@@ -142,10 +142,7 @@ if (pass1 !== pass2) {
 	}
 else if(pass1.length < 8){
 	alert('Password should be at least 8 characters');
-	username = '';
- 	email = '';
- 	pass1 = '';
- 	pass2 = '';
+	
 	return;
 }
 
@@ -167,10 +164,17 @@ try {
 	        if (response.ok) {
 			
 	           alert('Account created successfully. Please check your email to activate your account');
+			   document.getElementById('username').value = '';
+			   document.getElementById('email').value = '';
+			   document.getElementById('pass').value = '';
+			   document.getElementById('confirm_pass').value = '';
 
 	        } else {
 	            const data = await response.json();
+				
 	            alert('Sign up failed. This may be due to an already existing username or email');
+				
+				
 	        }
 	    } catch (error) {
 	       alert('An error occurred.');
