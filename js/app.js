@@ -133,7 +133,9 @@ var username = document.getElementById('username').value;
 const email = document.getElementById('email').value;
 const pass1 = document.getElementById('pass').value;
 const pass2 = document.getElementById('confirm_pass').value;
-
+// const submitBtn = document.getElementsByClassName('submit_button').textContent;
+// submitBtn.textContent = "Submitting...";
+// console.log(submitBtn);
 
 if (pass1 !== pass2) {
 	    alert('Passwords do not match.');
@@ -163,11 +165,13 @@ try {
 	
 	        if (response.ok) {
 			
-	           alert('Account created successfully. Please check your email to activate your account');
+	           alert('Account created successfully. Please check your email for an activation link');
 			   document.getElementById('username').value = '';
 			   document.getElementById('email').value = '';
 			   document.getElementById('pass').value = '';
 			   document.getElementById('confirm_pass').value = '';
+
+			   window.location.href = "activate.html";
 
 	        } else {
 	            const data = await response.json();
@@ -181,6 +185,106 @@ try {
 	        console.error('Error:', error);
 	    }
 	}
+
+
+// Activate account
+async function activateAccount(){
+	const inputField= document.getElementById('activation-link');
+    const activationLink = inputField.value.trim();
+	const parts = activationLink.split('/');
+	// token and uid
+	const token = parts.pop();
+	const uid = parts.pop();
+	console.log(uid);
+
+	if(inputField.value.length < 1){
+		alert('Enter the activation link in the input field');
+			
+		return;
+	}
+
+	try {
+				const response = await fetch('http://127.0.0.1:8000/auth/users/activation/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						uid: uid,
+						token: token,
+								
+					})
+					
+				});
+		
+				if (response.ok) {
+				
+				   alert('Account activated successfully. Please login to continue');
+				   document.getElementById('activation-link').value = '';
+				   
+	
+				   window.location.href = "index.html";
+	
+				} else {
+					const data = await response.json();
+					
+					alert('Activation failed. Please try again');
+					
+					
+				}
+			} catch (error) {
+			   alert('An error occurred.');
+				console.error('Error:', error);
+			}
+		}
+
+
+// Resend activation link
+async function resendEmail(){
+	const re_email= document.getElementById('resend_email').value;
+   
+	
+
+	if(re_email.length < 1){
+		alert('Enter your email');
+			
+		return;
+	}
+
+	try {
+				const response = await fetch('http://127.0.0.1:8000/auth/users/resend_activation/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						email: re_email,
+								
+					})
+					
+				});
+		
+				if (response.ok) {
+				
+				   alert('Activation link has been sent to your email');
+				   document.getElementById('resend_email').value = '';
+				   
+	
+				   window.location.href = "activate.html";
+	
+				} else {
+					const data = await response.json();
+					
+					alert('Activation email could not be sent. Check the email and try again');
+					
+					
+				}
+			} catch (error) {
+			   alert('An error occurred.');
+				console.error('Error:', error);
+			}
+		}
+
 
 
 
