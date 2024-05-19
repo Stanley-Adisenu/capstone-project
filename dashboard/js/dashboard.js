@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => {
             if (!response.ok) {
                 if (response.status === 401) {
-                    alert("code red")
                     // Token might be expired, try refreshing
                     return refreshAccessToken();
                 } else {
