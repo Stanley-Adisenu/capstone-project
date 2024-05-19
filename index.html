@@ -426,13 +426,13 @@ if (localStorage.getItem('darkMode') === "on") {
         <form action="">
           <div class="field">
             <div class="field__label">Your email</div>
-            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your email"></div>
+            <div class="field__wrap"><input id="signIn_email" class="field__input" type="email" placeholder="Enter your email"></div>
         </div>
         <div class="field">
             <div class="field__label">Password</div>
-            <div class="field__wrap"><input class="field__input" type="email" placeholder="Enter your password"></div>
+            <div class="field__wrap"><input id="signIn_password" class="field__input" type="password" placeholder="Enter your password"></div>
         </div>  
-        <div style="margin-top: 3rem;" class="popup__btns"><a class="popup__btn btn btn_orange "  href="./dashboard/index.html" data-effect="mfp-zoom-in">Sign In</a>
+        <div onclick="loginSubmit()" style="margin-top: 3rem;" ><a class=" btn btn_orange " >Sign In</a>
           </div>
         </form>
        

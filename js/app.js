@@ -285,6 +285,63 @@ async function resendEmail(){
 			}
 		}
 
+// Sign in
+async function loginSubmit(){
+	const email = document.getElementById('signIn_email').value;
+	const password = document.getElementById('signIn_password').value;
+	
+	
+	
+	if(email.length < 1){
+		alert('Please provide an email');
+		
+		return;
+	}
+	else if(password.length < 1){
+		alert('Please provide a passworrd');
+		
+		return;
+	}
+	try {
+				const response = await fetch('http://127.0.0.1:8000/auth/jwt/create/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password	,			
+					})
+					
+				});
+		
+				if (response.ok) {
+					const data = await response.json();
+					localStorage.setItem('access_token', data.access);  // Store JWT access token
+					localStorage.setItem('refresh_token', data.refresh);  // Store JWT refresh token
+
+				   document.getElementById('signIn_email').value = '';
+				   document.getElementById('signIn_password').value = '';
+
+	
+				   window.location.href = "/dashboard/index.html";
+	
+				} else {
+					const data = await response.json();
+					
+					alert('Login failed,please check your credentials and try again');
+					
+					
+				}
+			} catch (error) {
+			   alert('An error occurred.');
+				console.error('Error:', error);
+			}
+		}
+
+
+
+
 
 
 
