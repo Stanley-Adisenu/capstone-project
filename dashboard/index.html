@@ -29,6 +29,7 @@
     <meta property="og:description" content="Your academic ecosystem">
     <meta property="og:site_name" content="Unity">
     <meta property="fb:admins" content="132951670226590">
+    <script src="./js/dashboard.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css">
     <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
@@ -458,7 +459,7 @@ if (localStorage.getItem('darkMode') === "on") {
             </div>
             <div class="popup__field field">
               <div class="field__label">Email</div>
-              <div class="field__wrap"><input id="email_input" class="field__input" type="text"></div>
+              <div class="field__wrap"><input id="email_input" class="field__input" type="text" disabled></div>
             </div>
           </div>
           <div class="popup__field field">
@@ -549,7 +550,7 @@ if (localStorage.getItem('darkMode') === "on") {
               <!--End of that side -->
               </div>
           </div>
-        </div><button class="popup__btn btn btn_black" type="submit">Update Profile</button>
+        </div><button onclick="UpdateProfile()" id="update_profile" class="popup__btn btn btn_black" >Update Profile</button>
       </form>
     </div>
     
@@ -622,7 +623,6 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/lib/jquery.magnific-popup.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/charts.js"></script>
-    <script src="./js/dashboard.js"></script>
   </body>
 
 
