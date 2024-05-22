@@ -78,7 +78,6 @@ function updateProfile(data) {
     const fullnameInput = document.getElementById('fullname_input');
     const departmentInput = document.getElementById('department_input');
     const bioInput = document.getElementById('bio_input');
-    console.log(data.id);
     function update(domVar,dataVar){
         if (domVar) {
             domVar.value = dataVar;
@@ -105,7 +104,7 @@ function UpdateProfile(){
     const bioInput = document.getElementById('bio_input');
 
     const data = {
-        User_name: userNameInput.value,
+        user_name: userNameInput.value,
         full_name: fullnameInput.value,
         department: departmentInput.value,
         bio: bioInput.value
@@ -127,7 +126,7 @@ async function updateUserDetails(data) {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `JWT${accessToken}`
+                'Authorization': `JWT ${accessToken}`
             },
             body: JSON.stringify(data)
         });
@@ -154,7 +153,7 @@ async function updateUserDetails(data) {
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred while updating user details.');
+        // alert('An error occurred while updating user details.');
     }
 }
 
