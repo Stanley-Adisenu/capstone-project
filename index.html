@@ -404,19 +404,7 @@ if (localStorage.getItem('darkMode') === "on") {
         
       </div>
 
-      <div class="popup mfp-hide" id="popup-code">
-        <div class="popup__title h2">Check your <br>inbox</div>
-        <div class="popup__info">Solo just sent you a 6-Digit Code to <a href="mailto:stanleyadisenu@gmail.com">stan@gmail.com</a> please check your inbox and enter the code below.</div>
-        <div class="popup__code">
-          <div class="popup__number"><input type="tel"></div>
-          <div class="popup__number"><input type="tel"></div>
-          <div class="popup__number"><input type="tel"></div>
-          <div class="popup__number"><input type="tel"></div>
-          <div class="popup__number"><input type="tel"></div>
-          <div class="popup__number"><input type="tel"></div>
-        </div>
-        <div class="popup__btns"><button class="popup__btn btn btn_orange">Enter</button><a class="popup__link" href="#">Resend digit code</a></div>
-      </div>
+
 
 
       <div class="popup mfp-hide" id="popup-sign-in">
@@ -427,16 +415,35 @@ if (localStorage.getItem('darkMode') === "on") {
           <div class="field">
             <div class="field__label">Your email</div>
             <div class="field__wrap"><input id="signIn_email" class="field__input" type="email" placeholder="Enter your email"></div>
-        </div>
+        </div><br>
         <div class="field">
             <div class="field__label">Password</div>
             <div class="field__wrap"><input id="signIn_password" class="field__input" type="password" placeholder="Enter your password"></div>
         </div>  
-        <div onclick="loginSubmit()" style="margin-top: 3rem;" ><a class=" btn btn_orange " >Sign In</a>
+        <div onclick="loginSubmit()" style="margin-top: 1rem; cursor: pointer;" ><a style="width: 100%;" class="popup__btns btn btn_orange " >Sign In</a>
           </div>
         </form>
-       
+
+        <div id="sign-in-out" class="header__btns">
+          <a class="header__btn btn btn_transparent js-popup-open" href="#popup-code" data-effect="mfp-zoom-in">Forgot password?</a>         
       </div>
+      </div>
+
+      <div class="popup mfp-hide" id="popup-code">
+        <div class="popup__title h4">Reset password </div>
+        <div style="margin-top: -2rem;" class="popup__info">A new activation link will be sent to your email</div>
+        <div style="margin-top: -2rem;">
+            <div class="field__label">Email</div>
+            <div class="field__wrap"><input id="reset_email" class="field__input" type="email" placeholder="Enter your email"></div>
+        </div>
+
+        <div onclick="resetEmail()" style="margin-top: 1.3rem;"  class="popup__btns"><button class="popup__btn btn btn_orange">Submit</button>
+      </div>
+    </div>
+
+
+
+    
     </div><!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/svg4everybody.min.js"></script>

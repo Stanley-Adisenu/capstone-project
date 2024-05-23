@@ -133,9 +133,7 @@ var username = document.getElementById('username').value;
 const email = document.getElementById('email').value;
 const pass1 = document.getElementById('pass').value;
 const pass2 = document.getElementById('confirm_pass').value;
-// const submitBtn = document.getElementsByClassName('submit_button').textContent;
-// submitBtn.textContent = "Submitting...";
-// console.log(submitBtn);
+
 
 if (pass1 !== pass2) {
 	    alert('Passwords do not match.');
@@ -335,6 +333,121 @@ async function loginSubmit(){
 				}
 			} catch (error) {
 			   alert('An error occurred.');
+				console.error('Error:', error);
+			}
+		}
+
+
+// Reset password link 
+async function resetEmail(){
+	const reset_email= document.getElementById('reset_email').value;
+   
+	
+
+	if(reset_email.length < 1){
+		alert('Enter your email');
+			
+		return;
+	}
+
+	try {
+				const response = await fetch('http://127.0.0.1:8000/auth/users/reset_password/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						email: reset_email,
+								
+					})
+					
+				});
+		
+				if (response.ok) {
+				
+				   alert('Activation link has been sent to your email');
+				   document.getElementById('reset_email').value = ' ';
+				   
+	
+				   window.location.href = "passwordreset.html";
+	
+				} else {
+					const data = await response.json();
+					
+					alert('Activation email could not be sent. Check the email and try again');
+					
+					
+				}
+			} catch (error) {
+			   alert('An error occurred.');
+				console.error('Error:', error);
+			}
+		}
+
+// Reset password
+async function resetPassword(){
+	const new_password = document.getElementById('new_password').value;
+	const confirm_new_password = document.getElementById('confirm_newPassword').value;
+	const inputField= document.getElementById('new_activation');
+    const activationLink = inputField.value.trim();
+	const parts = activationLink.split('/');
+	// token and uid
+	const token = parts.pop();
+	const uid = parts.pop();
+	console.log(uid);
+
+	if(inputField.value.length < 1){
+		alert('Enter the activation link in the input field');
+			
+		return;
+	}
+	if (new_password !== confirm_new_password) {
+	    alert('Passwords do not match.');
+		return;
+	        
+	}
+	else if(new_password.length < 8){
+	alert('Password should be at least 8 characters');
+	
+	return;
+}
+
+	try {
+				const response = await fetch('http://127.0.0.1:8000/auth/users/reset_password_confirm/', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						uid: uid,
+						token: token,
+						new_password:new_password,
+						re_new_password:confirm_new_password
+								
+					})
+					
+				});
+		
+				if (response.ok) {
+				
+				   alert('Password changed successfully. Please login to continue');
+				   window.location.href = "index.html";
+				    document.getElementById('new_password').value = '';
+					document.getElementById('confirm_newPassword').value = '';
+					document.getElementById('new_activation') = '';
+				   
+	
+				   window.location.href = "index.html";
+	
+				} else {
+					const data = await response.json();
+					
+					alert('Passoword reset failed. Please try again');
+					
+					
+				}
+			} catch (error) {
+			//    alert('An error occurred.');
 				console.error('Error:', error);
 			}
 		}
