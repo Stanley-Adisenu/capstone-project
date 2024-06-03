@@ -139,14 +139,14 @@ if (localStorage.getItem('darkMode') === "on") {
         <div class="page__center">
           <div class="page__row page__row_head page__row_border">
             <div style="display: flex;justify-content: space-between;" class="page__col">
-              <div id="room_name" class="page__hello h5"> <h3>#FinalYearProject</h3></div>
+              <div id="room_name" class="page__hello h5"> <h3></h3></div>
               <div style="display: flex;  ">
                 <h3 style="margin-right: 1rem; margin-left: 1rem;">Host</h3>
                 <a class="quality__item" href="#">
                         <div class="quality__preview bg-pink-opacity host__pic"><img class="quality__pic " src="img/figure-1.png" alt=""></div>
                         <div  class="quality__details">
-                          <div id="host_Username" class="quality__category title">Benard Asokre</div>
-                          <div id="host_fullName" class="quality__info caption-sm">Bass</div>
+                          <div id="host_userName" class="quality__category title"></div>
+                          <div id="host_fullName" class="quality__info caption-sm"></div>
                         </div>
                       </a>
                 </div>
@@ -228,7 +228,7 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="page__col ">
                 
                 <!--start of messages  section-->
-            <div class="chat__message">
+            <div id="textBox" class="chat__message">
 
                 
 
@@ -273,24 +273,14 @@ if (localStorage.getItem('darkMode') === "on") {
                   <div class="widget__title mr-auto">Roomies</div>
                   <div class="quality quality_big">
                     <div class="quality__list">
-                        <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
-                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
-                        <div class="quality__details">
-                          <div class="quality__category title">Benard Asokre<svg class="icon icon-arrow-right">
-                              <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                            </svg></div>
-                          <div class="quality__info caption-sm">Bass</div>
-                        </div>
-                      </a>
-                      <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
-                        <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-2.png" alt=""></div>
-                        <div class="quality__details">
-                          <div class="quality__category title">Broni Waku<svg class="icon icon-arrow-right">
-                              <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                            </svg></div>
-                          <div class="quality__info caption-sm">Brw</div>
-                        </div>
-                      </a>
+
+                      <div id="roomies">
+
+                      </div>
+
+                    
+
+
                       </div>
                   </div>
                 </div>

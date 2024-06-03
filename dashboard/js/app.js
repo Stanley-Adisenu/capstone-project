@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             // alert("It has been Jsoned")
             console.log(data)
-            // updateDOM(data);            
+            updateRoomDOM(data);            
             // updateProfile(data);
             // const rooms = data.rooms;
             // console.log(rooms) ;
@@ -233,6 +233,94 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// update the room Dom
+function updateRoomDOM(data){
+    room = data.room;
+    messages =data.messages;
+    participants = data.room.participants;
+    console.log(messages)
+    const hostuserName= document.getElementById('host_userName');
+    const hostfullName= document.getElementById('host_fullName');
+    const roomName= document.getElementById('room_name');
+    let messageContainer = document.getElementById('textBox');
+    let roomiesContainer = document.getElementById('roomies');
+
+
+        if (hostuserName) {
+            hostuserName.textContent = room.host.user_name;
+        } else {
+            console.error('No username.');
+        }
+        if (hostfullName) {
+            hostfullName.textContent = room.host.full_name;
+        } else {
+            console.error('No username.');
+        }
+        if (roomName) {
+            roomName.textContent = room.name;
+        } else {
+            console.error('No username.');
+        }
+
+
+        for (let i = 0;  messages.length > i; i++) {
+            let message =  messages[i]
+    
+            console.log( message);
+            console.log(messageContainer)
+    
+            let row =
+             `
+             <div class="inbox__box">
+             <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+             <div class="inbox__details">
+               <div class="inbox__head">
+                 <div class="inbox__author title">${message.user.user_name}</div>
+                 <div class="inbox__time caption">${message.time_since_updated}</div>
+               </div>
+               <div class="inbox__text">
+                 <p>${message.body}</p>
+               </div>
+             </div>
+           </div>
+            
+            `
+    
+            messageContainer.innerHTML += row;
+    
+            
+        }
+
+        for (let i = 0;  participants.length > i; i++) {
+            let  participant =   participants[i]
+    
+            console.log(  participant);
+            console.log(roomiesContainer)
+    
+            let row =
+             `
+             <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
+             <div class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
+             <div class="quality__details">
+               <div class="quality__category title">${participant.user_name}<svg class="icon icon-arrow-right">
+                   <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                 </svg></div>
+               <div class="quality__info caption-sm">${participant.full_name}</div>
+             </div>
+           </a>
+            
+            `
+    
+            roomiesContainer.innerHTML += row;
+    
+            
+        }
+       
+
+
+}
+
 
 
 
@@ -253,23 +341,58 @@ document.addEventListener('DOMContentLoaded', function() {
             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
         }
      if(textArea.value.length >0){
-        const UserTypedMessage = escapeHtml(textArea.value); // Sanitize user input
-        textArea.value="";
 
-        let message = 
-        `<div class="inbox__box">
-        <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-        <div class="inbox__details">
-          <div class="inbox__head">
-            <div class="inbox__author title">Steve</div>
-            <div class="inbox__time caption">04:59</div>
-          </div>
-          <div class="inbox__text">
-            <p>${UserTypedMessage}</p>
-          </div>
-        </div>
-      </div>`;
-        textBox.insertAdjacentHTML("beforeend",message);
+        const chatId = localStorage.getItem('chat_id');
+        const UserTypedMessage = escapeHtml(textArea.value); 
+        
+        const accessToken = localStorage.getItem('access_token');
+   
+
+        if (!accessToken) {
+            window.location.href = '/index.html';
+        } 
+
+        fetch(`http://127.0.0.1:8000/dashboard/chat/${chatId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `JWT ${accessToken}`
+            },
+            body: JSON.stringify({
+                body: UserTypedMessage
+            })
+        })
+    .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+    })
+    .then(data => {
+        console.log('Success:', data);
+        window.location.href = '/dashboard/chat.html'
+    })
+    .catch(error => {
+        console.error('Error:', error);
+       
+    });
+
+    //     textArea.value="";
+
+    //     let message = 
+    //     `<div class="inbox__box">
+    //     <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
+    //     <div class="inbox__details">
+    //       <div class="inbox__head">
+    //         <div class="inbox__author title">Steve</div>
+    //         <div class="inbox__time caption">04:59</div>
+    //       </div>
+    //       <div class="inbox__text">
+    //         <p>${UserTypedMessage}</p>
+    //       </div>
+    //     </div>
+    //   </div>`;
+    //     textBox.insertAdjacentHTML("beforeend",message);
      }   
  }
 
