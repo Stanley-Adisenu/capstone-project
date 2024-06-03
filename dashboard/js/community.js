@@ -68,11 +68,23 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             // alert("It has been Jsoned")
-            // updateDOM(data);            
-            // updateProfile(data);
+        const roomNumber= document.getElementById('room_number');
+        if (roomNumber) {
+            roomNumber.textContent = data.total_rooms;
+        } 
+        else {
+         console.error('0');
+        }
+            // Update room
             const rooms = data.rooms;
             console.log(rooms) ;
             communityHome(rooms) 
+
+            // update hosts
+            const hosts = data.unique_hosts;
+            console.log(hosts);
+            updateHosts(hosts);
+
         })
         .catch(error => {
             // alert("alerted")
@@ -129,6 +141,40 @@ function communityHome(rooms){
         // roomsContainer.innerHTML += row
     }
    
+
+}
+
+function updateHosts(hosts){
+    let hostsContainer = document.getElementById('hostsContainer');
+    for (let i = 0; hosts.length > i; i++) {
+        let host = hosts[i]
+
+        console.log(host);
+        console.log(hostsContainer)
+
+        let row =
+         `
+         <a class="quality__item js-popup-open" href="#popup-user" data-effect="mfp-zoom-in">
+         <div  class="quality__preview bg-pink-opacity"><img class="quality__pic" src="img/figure-1.png" alt=""></div>
+         <div class="quality__details">
+           <div class="quality__category title">${host.user_name}<svg class="icon icon-arrow-right">
+               <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+             </svg></div>
+           <div class="quality__info caption-sm">${host.full_name}</div>
+          <!--<div class="quality__money caption">Rooms</div> --> 
+         </div>
+       </a>
+        
+        `
+
+        hostsContainer.innerHTML += row;
+
+        // let row = `<div>
+        //                 <h3>${room.name}</h3>
+        //             </div>`
+
+        // roomsContainer.innerHTML += row
+    }
 
 }
 
