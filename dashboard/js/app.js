@@ -185,6 +185,57 @@ $('.activity__item').on('click', function () {
 });
 
 //chat in comunnity
+document.addEventListener('DOMContentLoaded', function() {
+    const accessToken = localStorage.getItem('access_token');
+   
+
+    if (!accessToken) {
+        window.location.href = '/index.html';
+    } 
+    // console.log(accessToken);
+    else {
+        const chatId = localStorage.getItem('chat_id');
+        // alert(chatId)
+        
+
+        // alert("fetching")
+        fetch(`http://127.0.0.1:8000/dashboard/chat/${chatId}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `JWT ${accessToken}`  // Use JWT header type
+            }
+        })
+        .then(response => {
+            // alert("done fetching")
+            if (!response.ok) {
+                // if (response.status === 401) {
+                //     // Token might be expired, try refreshing
+                //     // return refreshAccessToken();
+                // } else {
+                //     throw new Error('Authentication error');
+                // }
+                console.log("An error occured ")
+            }
+            return response.json();
+        })
+        .then(data => {
+            // alert("It has been Jsoned")
+            console.log(data)
+            // updateDOM(data);            
+            // updateProfile(data);
+            // const rooms = data.rooms;
+            // console.log(rooms) ;
+            // communityHome(rooms) 
+        })
+        .catch(error => {
+            // alert("alerted")
+            console.error('Authentication error:', error);
+        });
+    }
+});
+
+
+
     function sender(){
     const textArea = document.querySelector(".editor__field textarea");
     const textBox = document.querySelector(".chat__message");
@@ -318,12 +369,13 @@ let API_KEY = "";
             })
         }
 
-        fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        fetch(API_URL, requestOptions)
+        .then(res => res.json())
+        .then(data => {
             const ChatBotResponse = document.querySelector(".bot__message .new");
             const botPic = document.querySelector(".bot__message .bot__pic");
             botPic.classList.remove("bot__pic"); 
             ChatBotResponse.innerHTML = escapeHtml(data.choices[0].message.content);
-
             ChatBotResponse.classList.remove("new"); 
             console.log(ChatBotResponse);
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   
 <head>
     <meta charset="utf-8">
@@ -218,57 +218,16 @@ if (localStorage.getItem('darkMode') === "on") {
           <div class="page__row page__row_border">
             <div class="page__col">
 
-            <a href="./chat.html">
-              <div class="inbox__item active marginator">
-                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                      
-                      <div class="inbox__details">
-                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
-                          <div class="name__time">
-                            <div class="inbox__author caption">Joel Becker</div>
-                          <div class="inbox__time caption">12h <span>ago</span></div>
-                          </div>
-                          <button class="actions__btn"><svg class="icon icon-star">
-                              <use xlink:href="img/sprite.svg#icon-star"></use>
-                            </svg></button>
-                        </div>
-                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                        <div class="inbox__text">"Everything project"</div>
-                        <div style="display: flex; justify-content: space-between;" class="actions">
-                          <div class="joined__number" >
-                           <h4> <span>200 </span> joined</h4>
-                            </div>
-                          
-                            </div>
-                      </div>
-                    </div> 
-                  </a>
+
+              <div id="room_list">
+                
+              </div>
+
+
+
+           
               <!--End of that side --> 
-              <a href="./chat.html">
-              <div class="inbox__item active marginator">
-                      <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
-                      
-                      <div class="inbox__details">
-                        <div style="display: flex; justify-content: space-between;" class="inbox__head">
-                          <div class="name__time">
-                            <div class="inbox__author caption">Joel Becker</div>
-                          <div class="inbox__time caption">12h <span>ago</span></div>
-                          </div>
-                          <button class="actions__btn"><svg class="icon icon-star">
-                              <use xlink:href="img/sprite.svg#icon-star"></use>
-                            </svg></button>
-                        </div>
-                        <div class="inbox__title title"><h1><span>#</span>FinalYearProject</h1></div>
-                        <div class="inbox__text">"Everything project"</div>
-                        <div>
-                          <div class="joined__number" >
-                           <h4> <span>200 </span> joined</h4>
-                            </div>
-                          
-                            </div>
-                      </div>
-                    </div> 
-                  </a>
+            
               <!--End of that side -->
               
               
@@ -337,23 +296,23 @@ if (localStorage.getItem('darkMode') === "on") {
           <div>
             <div style="margin-bottom: 1.5rem;">
               <div class="field__label ">Room name</div>
-              <div ><input class="field__input" type="text" placeholder="#Computer engineers"></div>
+              <div ><input id="room_name" class="field__input" type="text" placeholder="#Computer engineers"></div>
             </div>        
           </div>
 
           <div>
             <div style="margin-bottom: 1.5rem;">
               <div class="field__label">Topic</div>
-              <div ><input class="field__input" type="text" placeholder="Lets network"></div>
+              <div ><input id="room_topic" class="field__input" type="text" placeholder="Lets network"></div>
             </div>        
           </div>
           <div class="popup__field field">
             <div class="field__label">Description</div>
-            <div class="field__wrap"><textarea class="field__textarea"></textarea></div>
+            <div class="field__wrap"><textarea id="room_description" class="field__textarea"></textarea></div>
           </div>
         </div>
         
-        <button style="margin-right: 1.5rem;" class="popup__btn btn btn_black" type="submit">Create</button>
+        <button onclick="createRoom()" style="margin-right: 1.5rem;" class=" btn btn_black" >Create</button>
        
         
       </form>
@@ -621,6 +580,7 @@ if (localStorage.getItem('darkMode') === "on") {
     <script src="js/app.js"></script>
     <script src="js/charts.js"></script>
     <script src="./js/dashboard.js"></script>
+    <script src="./js/community.js"></script>
 
   </body>
 </html>

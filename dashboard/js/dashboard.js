@@ -27,15 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             updateDOM(data);            
-            updateProfile(data);            
+            updateProfile(data);  
         })
         .catch(error => {
             console.error('Authentication error:', error);
-            window.location.href = '/index.html';
         });
     }
 });
 
+// Refreshing to get access token 
 async function refreshAccessToken() {
     const refreshToken = localStorage.getItem('refresh_token');
     if (!refreshToken) {
@@ -78,6 +78,7 @@ function updateProfile(data) {
     const fullnameInput = document.getElementById('fullname_input');
     const departmentInput = document.getElementById('department_input');
     const bioInput = document.getElementById('bio_input');
+
     function update(domVar,dataVar){
         if (domVar) {
             domVar.value = dataVar;
@@ -91,8 +92,9 @@ function updateProfile(data) {
     update(fullnameInput,data.full_name);
     update(departmentInput,data.department);
     update(bioInput,data.bio);
-
     
+
+ 
 }
 
 
@@ -103,15 +105,17 @@ function UpdateProfile(){
     const departmentInput = document.getElementById('department_input');
     const bioInput = document.getElementById('bio_input');
 
+
     const data = {
         user_name: userNameInput.value,
         full_name: fullnameInput.value,
         department: departmentInput.value,
-        bio: bioInput.value
+        bio: bioInput.value,
 
     };
 
     updateUserDetails(data);
+
 }
 
 async function updateUserDetails(data) {
@@ -186,3 +190,91 @@ async function refreshAccessToken() {
         return null;
     }
 }
+
+// Update profile avatar
+// function updateProfileAvatar(){
+//     const avatarInput = document.getElementById('file-upload').files[0];
+
+//     if (!avatarInput) {
+//         alert('Please select a file to upload.');
+//         return;
+//     }
+
+//     const validImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp'];
+//     if (!validImageTypes.includes(avatarInput.type)) {
+//         alert('Please upload a valid image file (JPEG, PNG, GIF, BMP, or WEBP).');
+//         return;
+//     }
+
+//     const formData = new FormData();
+//     formData.append('avatar', avatarInput);
+
+//     const accessToken = localStorage.getItem('access_token');
+
+//     fetch('http://127.0.0.1:8000/auth/users/me/', {
+//         method: 'PATCH',
+//         body: formData,
+//         headers: {
+//             'Authorization': `JWT ${accessToken}`
+//         }
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             alert('Network response was not ok');
+//             return Promise.reject('Network response was not ok');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         console.log(data);
+//         alert('Profile updated successfully.');
+
+//         // Assuming the response data contains the URL of the new profile image
+//         const profileImage = document.getElementById('profile_avatar');
+//         profileImage.src = data.avatarUrl; // Use the correct property name from your response
+//         profileImage.style.display = 'block';
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         alert('An error occurred while updating the profile.');
+//     });
+// }
+
+
+// document.getElementById('profileForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+
+//     const fileInput = document.getElementById('profilePicture');
+//     const file = fileInput.files[0];
+
+//     if (!file) {
+//         alert('Please select a file to upload.');
+//         return;
+//     }
+
+//     const reader = new FileReader();
+//     reader.onload = function(e) {
+//         const binaryString = e.target.result;
+
+//         const token = localStorage.getItem('authToken');  // Replace with your token management
+
+//         fetch('http://localhost:8000/auth/users/me/', {
+//             method: 'PATCH',
+//             body: JSON.stringify({ profile_picture: binaryString }),
+//             headers: {
+//                 'Authorization': 'JWT ' + token,  // Use 'Bearer ' if using simple token authentication
+//                 'Content-Type': 'application/json'
+//             }
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data);
+//             // Optionally update the UI with the new profile picture
+//         })
+//         .catch(error => console.error('Error:', error));
+//     };
+//     reader.readAsDataURL(file);  // Convert the file to Base64
+// });
+
+
+

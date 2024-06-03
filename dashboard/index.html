@@ -431,11 +431,20 @@ if (localStorage.getItem('darkMode') === "on") {
           <div class="popup__title h6 mobile-show">Your Profile</div>
           <div class="popup__category caption-sm">Your Avatar</div>
           <div class="popup__line">
-            <div class="popup__ava"><img class="popup__pic" src="img/ava.png" alt=""></div>
+            <div class="popup__ava">
+              <img id="profile_avatar"  class="popup__pic" src="img/ava.png" alt=""></div>
             <div class="popup__details">
+
               <div class="popup__btns">
-                <div class="popup__loading"><input class="popup__file" type="file"><button class="popup__btn btn btn_purple">Upload New</button></div><button class="popup__btn btn btn_gray">Delete Avatar</button>
+                <div class="popup__loading">
+                  <label for="file-upload" class="custom-file-upload">
+                    <div style="cursor: pointer;padding-top: 0.5rem;" class="popup__btn btn btn_gray">Select Avatar</div>                               
+                    <input id="file-upload" type="file" name="avatar">
+                </label>
+                </div>
+                <button onclick="updateProfileAvatar()" id="update_avatar" class="popup__btn btn btn_purple">Update Avatar</button>
               </div>
+
               <div class="popup__text">Avatar help your teammates recognize you in Unity.</div>
             </div>
           </div>
