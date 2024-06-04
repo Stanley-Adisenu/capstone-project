@@ -25,7 +25,7 @@ function createRoom(){
                 return response.json();
         })
         .then(data => {
-            console.log('Success:', data);
+            // console.log('Success:', data);
             alert('Room created successfully!');
         })
         .catch(error => {
@@ -72,17 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (roomNumber) {
             roomNumber.textContent = data.total_rooms;
         } 
-        else {
-         console.error('0');
-        }
+        
             // Update room
             const rooms = data.rooms;
-            console.log(rooms) ;
+            // console.log(rooms) ;
             communityHome(rooms) 
 
             // update hosts
             const hosts = data.unique_hosts;
-            console.log(hosts);
+            // console.log(hosts);
             updateHosts(hosts);
 
         })
@@ -101,8 +99,8 @@ function communityHome(rooms){
     for (let i = 0; rooms.length > i; i++) {
         let room = rooms[i]
 
-        console.log(room);
-        console.log(roomsContainer)
+        // console.log(room);
+        // console.log(roomsContainer)
 
         let row =
          `
@@ -149,8 +147,8 @@ function updateHosts(hosts){
     for (let i = 0; hosts.length > i; i++) {
         let host = hosts[i]
 
-        console.log(host);
-        console.log(hostsContainer)
+        // console.log(host);
+        // console.log(hostsContainer)
 
         let row =
          `
@@ -179,9 +177,6 @@ function updateHosts(hosts){
 }
 
 
-
-
-
 // redirecting to chat section 
 function chatRoom(id){
     localStorage.setItem('chat_id', id);
@@ -190,49 +185,46 @@ function chatRoom(id){
 
 
 
+
+
 // updating chat 
 
+function roomSearch(){
+const query = document.getElementById('room_search').value;
+// console.log(query)
+const accessToken = localStorage.getItem('access_token');
 
-        
-        // const chatId = localStorage.getItem('chatId')
-        
-        // window.location.href = '/dashboard/chat.html'
 
-
-        // //  alert("fetching")
-        // fetch(`http://127.0.0.1:8000/dashboard/chat/${chatId}/`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Authorization': `JWT ${accessToken}`  
-        //     }
-        // })
-        // .then(response => {
-        //     if (!response.ok) {
+    fetch(`http://127.0.0.1:8000/dashboard/home/?q=${query}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `JWT ${accessToken}`  
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
                
-        //         console.log("An error occured ")
-        //     }
-        //     // alert("Done fetching")
-        //     return response.json();
-        // })
-        // .then(data => {
+                console.log("An error occured ")
+            }
+            // alert("Done fetching")
+            return response.json();
+        })
+        .then(data => {
+            let roomsContainer = document.getElementById('room_list');
+            roomsContainer.innerHTML = '';
+           // Update room
+           const rooms = data.rooms;
+        //    console.log(rooms) ;
+           communityHome(rooms) 
 
-        //     // alert("The data has been gotten")
-        //     console.log(data)
-        //     updateRoomDom(data)
+        
+        })
+        .catch(error => {
+            // alert("alerted")
+            console.error('Authentication error:', error);
+        });
+    }
 
-        //     // updateChat(data)
-           
-        //     // const rooms = data.rooms;
-        //     // console.log(rooms) ;
-        //     // communityHome(rooms) 
-        // })
-        // .catch(error => {
-        //     // alert("alerted")
-        //     console.error('Authentication error:', error);
-        // });
-    // }
-    // alert(accessToken)
-// }
 
 // Update the room's DOM
 // Updating the DOM with  the fetched data 

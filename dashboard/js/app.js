@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             // alert("It has been Jsoned")
-            console.log(data)
+            // console.log(data)
             updateRoomDOM(data);            
             // updateProfile(data);
             // const rooms = data.rooms;
@@ -239,7 +239,7 @@ function updateRoomDOM(data){
     room = data.room;
     messages =data.messages;
     participants = data.room.participants;
-    console.log(messages)
+    // console.log(messages)
     const hostuserName= document.getElementById('host_userName');
     const hostfullName= document.getElementById('host_fullName');
     const roomName= document.getElementById('room_name');
@@ -250,25 +250,25 @@ function updateRoomDOM(data){
         if (hostuserName) {
             hostuserName.textContent = room.host.user_name;
         } else {
-            console.error('No username.');
+            // console.error('No username.');
         }
         if (hostfullName) {
             hostfullName.textContent = room.host.full_name;
         } else {
-            console.error('No username.');
+            // console.error('No username.');
         }
         if (roomName) {
             roomName.textContent = room.name;
         } else {
-            console.error('No username.');
+            // console.error('No username.');
         }
 
 
         for (let i = 0;  messages.length > i; i++) {
             let message =  messages[i]
     
-            console.log( message);
-            console.log(messageContainer)
+            // console.log( message);
+            // console.log(messageContainer)
     
             let row =
              `
@@ -295,8 +295,8 @@ function updateRoomDOM(data){
         for (let i = 0;  participants.length > i; i++) {
             let  participant =   participants[i]
     
-            console.log(  participant);
-            console.log(roomiesContainer)
+            // console.log(  participant);
+            // console.log(roomiesContainer)
     
             let row =
              `
@@ -369,7 +369,7 @@ function updateRoomDOM(data){
             return response.json();
     })
     .then(data => {
-        console.log('Success:', data);
+        // console.log('Success:', data);
         window.location.href = '/dashboard/chat.html'
     })
     .catch(error => {
@@ -500,7 +500,7 @@ let API_KEY = "";
             botPic.classList.remove("bot__pic"); 
             ChatBotResponse.innerHTML = escapeHtml(data.choices[0].message.content);
             ChatBotResponse.classList.remove("new"); 
-            console.log(ChatBotResponse);
+            // console.log(ChatBotResponse);
 
         }).catch((error) => {
             const ChatBotResponse = document.querySelector(".bot__message .new");

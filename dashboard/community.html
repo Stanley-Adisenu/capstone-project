@@ -148,26 +148,15 @@ if (localStorage.getItem('darkMode') === "on") {
             <div class="page__col">
               <div class="header"><button class="header__burger"></button>
                 <div class="search">
-                  <div class="search__field"><input class="search__input" type="text" placeholder="Search" /><button class="search__toggle"><svg class="icon icon-search">
+                  <div class="search__field">
+                    <input id="room_search" class="search__input" type="text" placeholder="Search" /><button class="search__toggle"><svg class="icon icon-search">
                         <use xlink:href="img/sprite.svg#icon-search"></use>
                       </svg><svg class="icon icon-close">
                         <use xlink:href="img/sprite.svg#icon-close"></use>
                       </svg></button></div>
                   <div class="search__result">
-                    <div class="search__info caption-sm">Recent Searches</div>
-                    <div class="search__list"><a class="search__item" href="#">
-                        <div class="search__preview bg-pink"><img class="search__pic" src="img/figure-1.png" alt="" /></div>
-                        <div class="search__text">Earning byitems<svg class="icon icon-arrow-right">
-                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                          </svg></div>
-                      </a><a class="search__item" href="#">
-                        <div class="search__preview bg-yellow"><img class="search__pic" src="img/figure-4.png" alt="" /></div>
-                       
-                      </a><a class="search__item" href="#">
-                        <div class="search__preview bg-blue-light"><img class="search__pic" src="img/figure-3.png" alt="" /></div>
-                        
-                      </a></div>
-                      <button class="search__btn btn btn_purple btn_wide">Advance Search</button>
+                   
+                      <button onclick="roomSearch()" class="search__btn btn btn_purple btn_wide">Search</button>
                   </div>
                 </div><button class="header__search"><svg class="icon icon-search">
                     <use xlink:href="img/sprite.svg#icon-search"></use>
