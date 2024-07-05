@@ -6,7 +6,7 @@ function createRoom(){
 
     const accessToken = localStorage.getItem('access_token');
   
-    fetch('http://127.0.0.1:8000/dashboard/createroom/', {
+   fetch('http://127.0.0.1:8000/dashboard/createroom/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,6 +32,10 @@ function createRoom(){
             console.error('Error:', error);
            
         });
+
+      
+    
+
 }
 
 // Loading rooms into the DOM
@@ -99,12 +103,11 @@ function communityHome(rooms){
     for (let i = 0; rooms.length > i; i++) {
         let room = rooms[i]
 
-        // console.log(room);
         // console.log(roomsContainer)
 
         let row =
          `
-         <div onClick="chatRoom(${room.id})" class="inbox__item active marginator">
+         <div onClick="chatRoom(${room.id},'${room.name}')" class="inbox__item active marginator">
                       <div class="inbox__ava"><img class="inbox__pic" src="img/ava-2.png" alt=""></div>
                       
                       <div class="inbox__details">
@@ -178,8 +181,10 @@ function updateHosts(hosts){
 
 
 // redirecting to chat section 
-function chatRoom(id){
+function chatRoom(id,names){
+   
     localStorage.setItem('chat_id', id);
+    localStorage.setItem('chat_name', names);
     window.location.href = '/dashboard/chat.html'
 }
 

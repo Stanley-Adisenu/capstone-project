@@ -184,8 +184,37 @@ $('.activity__item').on('click', function () {
     $(this).toggleClass('active');
 });
 
+// Takashi 
+function fetchMessages() {
+    setInterval(async () => {
+        try {
+            const chatId = localStorage.getItem('chat_id');
+            const accessToken = localStorage.getItem('access_token');
+
+            const response = await fetch(`http://127.0.0.1:8000/dashboard/chat/${chatId}/`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `JWT ${accessToken}` 
+                }}); 
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            updateRoomDOM(data);
+        } catch (error) {
+            console.error('Error fetching messages:', error);
+        }
+    }, 5000);
+}
+
+
+
 //chat in comunnity
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
     const accessToken = localStorage.getItem('access_token');
    
 
@@ -196,7 +225,8 @@ document.addEventListener('DOMContentLoaded', function() {
     else {
         const chatId = localStorage.getItem('chat_id');
         // alert(chatId)
-        
+    
+
 
         // alert("fetching")
         fetch(`http://127.0.0.1:8000/dashboard/chat/${chatId}/`, {
@@ -221,7 +251,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             // alert("It has been Jsoned")
             // console.log(data)
-            updateRoomDOM(data);            
+            updateRoomDOM(data); 
+            // fetchMessages()           
             // updateProfile(data);
             // const rooms = data.rooms;
             // console.log(rooms) ;
@@ -231,11 +262,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // alert("alerted")
             console.error('Authentication error:', error);
         });
+
+
     }
 });
 
 // update the room Dom
 function updateRoomDOM(data){
+  
     room = data.room;
     messages =data.messages;
     participants = data.room.participants;
@@ -246,6 +280,8 @@ function updateRoomDOM(data){
     let messageContainer = document.getElementById('textBox');
     let roomiesContainer = document.getElementById('roomies');
 
+    messageContainer.innerHTML='';
+    roomiesContainer.innerHTML='';
 
         if (hostuserName) {
             hostuserName.textContent = room.host.user_name;
@@ -288,6 +324,12 @@ function updateRoomDOM(data){
             `
     
             messageContainer.innerHTML += row;
+
+
+            messageContainer.scroll({
+             top: messageContainer.scrollHeight,
+             behavior: 'smooth'
+           });
     
             
         }
@@ -325,6 +367,7 @@ function updateRoomDOM(data){
 
 
     function sender(){
+       
     const textArea = document.querySelector(".editor__field textarea");
     const textBox = document.querySelector(".chat__message");
 
@@ -370,7 +413,8 @@ function updateRoomDOM(data){
     })
     .then(data => {
         // console.log('Success:', data);
-        window.location.href = '/dashboard/chat.html'
+        document.querySelector(".editor__field textarea").value='';
+        // window.location.href = '/dashboard/chat.html'
     })
     .catch(error => {
         console.error('Error:', error);
@@ -579,5 +623,75 @@ function link3ed(){
 function logout() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
+    localStorage.removeItem('chat_id');
+    localStorage.removeItem('chat_name');
     window.location.href = '/index.html';
 }
+
+
+
+
+
+
+// const chatId = localStorage.getItem('chat_id');
+// // alert(chatId)
+// let room_name =String(chatId) ;
+
+
+// chatSocket = new WebSocket(`ws://127.0.0.1:8000/ws/chat/${room_name}/`)
+
+// console.log(chatSocket)
+// chatSocket.onmessage = function(e){
+// console.log('onMessage')
+// }
+
+// chatSocket.onopen = function(e){
+// console.log('onOpen = chat socket was opened')
+// }
+
+
+// chatSocket.onclose = function(e){
+// console.log('onClose = chat socket was closed')
+// }
+
+// // Testing something
+// function senders(e){
+//     e.preventDefault()
+
+//     chatInstant()
+
+//     return false
+// }
+
+
+// function chatInstant(){
+//     const textArea = document.querySelector(".editor__field textarea");
+//     const textBox = document.querySelector(".chat__message");
+
+//         // Function to escape HTML characters
+
+//         function escapeHtml(text) {
+//             const map = {
+//                 '&': '&amp;',
+//                 '<': '&lt;',
+//                 '>': '&gt;',
+//                 '"': '&quot;',
+//                 "'": '&#039;'
+//             };
+//             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+//         }
+   
+
+//         // const chatId = localStorage.getItem('chat_id');
+//         const UserTypedMessage = escapeHtml(textArea.value);
+
+//     chatSocket.send(JSON.stringify({
+       
+//         'type':'message',
+//         'message':UserTypedMessage
+
+//     }))
+//     alert(UserTypedMessage)
+//     alert("worked")
+//     document.querySelector(".editor__field textarea").value='';
+// }

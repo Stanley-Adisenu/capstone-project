@@ -30,6 +30,7 @@
     <meta property="fb:admins" content="132951670226590">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,500;1,500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/app.css">
+    <script src="./js/socket.js"></script>
     <script>var viewportmeta = document.querySelector('meta[name="viewport"]');
 if (viewportmeta) {
   if (screen.width < 375) {
@@ -255,7 +256,7 @@ if (localStorage.getItem('darkMode') === "on") {
                     <div style="position: relative;" class="editor__body">
                       <div class="editor__field">
                           <textarea onclick="alerter()"  id="input" class="editor__textarea" placeholder="text ..."></textarea></div>
-                        <button onclick="sender()"  id="send__btn" class="chat__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
+                        <button   id="send__btn" class="chat__btn"  ><svg style="display: block;"  class="icon icon-arrow-right">
                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
                          </svg></button>                    
                     </div>
